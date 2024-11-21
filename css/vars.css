@@ -1,6 +1,7 @@
 :root {
-  --headerBgColor: #808080;
-  --headerMenuItemTxtClr: #ffffff;
-  --headerIconBgClr: #ffffff;
+  --headerBgColor: #ffffff;
+  --headerMenuItemTxtClr: #0f0f0f;
+  --headerIconBgClr: #808080;
+  --burgerIconClr: #ff000f;
   --mainTxtClr: #ffffff;
 }
