@@ -78,10 +78,32 @@ body.__lock {
   width: 45px;
   height: 45px;
 }
+.header__logo.logo__left {
+  color: #ffffff;
+}
 .header__logo.logo__left .img {
-  min-width: 45px;
+  width: 45px;
+  height: 45px;
   background-color: red;
+  border-radius: 50%;
   overflow: hidden;
+  position: relative;
+}
+.header__logo.logo__left .img img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 50%;
+  height: 50%;
+  transform: rotate(90deg);
+}
+.header__logo.logo__left .img .text {
+  text-align: center;
+  font-size: 8px;
+  font-weight: 600;
+  position: absolute;
+  top: 20%;
+  left: 3%;
 }
 
 .header__menu__list > li {

@@ -103,13 +103,36 @@ body {
     }
 
     &.logo__left {
+        color: #ffffff;
 
         .img {
-            min-width: 45px;
-            // height: 45px;
+            // min-width: 45px;
+            width: 45px;
+            height: 45px;
             background-color: red;
-            // border-radius: 50%;
+            border-radius: 50%;
             overflow:hidden ;
+            position: relative;
+
+            img {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                max-width: 50%;
+                height: 50%;
+                transform: rotate(90deg);
+            }
+
+            .text {
+                text-align: center;
+                font-size: 8px;
+                font-weight: 600;
+                position: absolute;
+                top: 20%;
+                left: 3%;
+            }
+
+
         }
 
     }
