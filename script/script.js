@@ -117,6 +117,87 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   };
 
+  // *************************************************************
+
+  // Отримуємо елемент з класом .typing-text
+  const text = document.querySelector('.typing-text');
+
+  // Отримуємо всі слова з дочірніх елементів <span>
+  // Перетворюємо список <span> на масив за допомогою Array.from.
+  // map(span => span.textContent) витягує текстовий вміст кожного <span> у масив words.
+  const words = Array.from(text.querySelectorAll('span')).map(span => span.textContent);
+
+  // Запускаємо функцію з друку
+  setTyper(text, words);
+
+  function setTyper(element, words) {
+
+      // затримка між друком кожної літери (в мілісекундах).
+      const LETTER_TYPE_DELAY = 75;
+      
+      // час, протягом якого повне слово залишається на екрані перед видаленням (в мілісекундах).
+      const WORD_STAY_DELAY = 2000;
+      
+      // напрямок друку вперед
+      const DIRECTION_FORWARDS = 0;
+      
+      // напрямок друку назад
+      const DIRECTION_BACKWARDS = 1;
+      
+      // напрямок друку
+      let direction = DIRECTION_FORWARDS;
+      // індекс поточного слова з масиву
+      let wordIndex = 0;
+      // індекс поточної літери у слові.
+      let letterIndex = 0;
+      
+      // змінна для збереження інтервалу друку.
+      let wordTypeInterval;
+      
+      // Запуск друку
+      startTyping();
+      
+      function startTyping() {      
+          wordTypeInterval = setInterval(typeLetter, LETTER_TYPE_DELAY);        
+      }
+      
+
+    function typeLetter() {
+      const word = words[wordIndex];
+
+      if (direction === DIRECTION_FORWARDS) {
+        letterIndex++;
+
+        if (letterIndex === word.length) {
+          direction = DIRECTION_BACKWARDS;
+          clearInterval(wordTypeInterval);
+          setTimeout(startTyping, WORD_STAY_DELAY);
+        }
+      } else if (direction === DIRECTION_BACKWARDS) {
+        letterIndex--;
+
+        if (letterIndex === 0) {
+          nextWord();
+        }
+      }
+
+      const textToType = word.substring(0, letterIndex);
+      element.textContent = textToType;
+    }
+
+    function nextWord() {
+      letterIndex = 0;
+      direction = DIRECTION_FORWARDS;
+      wordIndex++;
+
+      if (wordIndex === words.length) {
+        wordIndex = 0;
+      }
+    }
+  }
+
+    // *************************************************************
+
 });
   
 

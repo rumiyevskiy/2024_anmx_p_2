@@ -52,20 +52,19 @@
             <div class="header__body">
 
                 <div href="#" class="header__logo logo__left">
-                    <img src="" alt="">
-                    <div>
-                        <p>Професійні портрети</p>
-                        <p>з вiдеонаписанням</p>
+
+                    <div class="img">
+                        <img src="" alt="">
+                    </div>
+
+                    <!-- <img src="" alt=""> -->
+                    <div class="header__logo-text">
+                        <p>Ексклюзивні набори солодощів</p>
+                        <p>Працюємо 24/7</p>
                     </div>                    
                 </div>
 
                 <div class="header__menu">
-
-                    <!-- <div class="header__menu__icon burger">
-
-                        <span></span>
-
-                    </div> -->
 
                     <nav class="header__menu__body">
 
@@ -73,58 +72,35 @@
 
                             <li>
 
-                                <a data-goto='.page__section-1' href="#" class="header__menu__item">Розділ 1</a>
+                                <a data-goto='.page__hero' href="#" class="header__menu__item">Головна</a>
 
                             </li>
 
                             <li>
 
-                                <a data-goto='.page__section-2' href="#" class="header__menu__item">Розділ 2</a>
+                                <a data-goto='.page__section-2' href="#" class="header__menu__item">Про нас</a>
 
                             </li>
 
                             <li>
 
-                                <a data-goto='.page__section-3' href="#" class="header__menu__item">Розділ 3</a>
+                                <a data-goto='.page__section-3' href="#" class="header__menu__item">Наша команда</a>
 
                             </li>
-
-                            <!-- <li>
-
-                                <a href="#" class="header__menu__item">Сторінка 2</a>
-
-                                <span class="header__menu__item__arrow"></span>
-
-                                <ul class="header__menu__sub-list">
-
-                                    <li>
-
-                                        <a href="#" class="header__menu__sub-item">Розділ 1 Сторінки 2</a>
-        
-                                    </li>
-                                    <li>
-
-                                        <a href="#" class="header__menu__sub-item">Розділ 2 Сторінки 2</a>
-        
-                                    </li>
-                                    <li>
-
-                                        <a href="#" class="header__menu__sub-item">Розділ 3 Сторінки 2</a>
-        
-                                    </li>
-
-                                </ul>
-                            </li> -->
 
                             <li>
 
-                                <a  data-goto='.footer' href="#" class="header__menu__item">Footer</a>
+                                <a data-goto='.page__section-3' href="#" class="header__menu__item">Наші роботи</a>
+
+                            </li>                            
+
+                            <li>
+
+                                <a  data-goto='.footer' href="#" class="header__menu__item">Залишити контакти</a>
 
                             </li>
 
-                        </ul>
-
-                        
+                        </ul>                        
 
                     </nav>
                     
@@ -150,121 +126,56 @@
 
         <main class="main">            
 
-            <section class="page__section conteiner page__section-1">
+            <section class="page__section conteiner page__hero">
 
-                <h2 class="page__section__title">Section 1</h2>
-                <h2 class="test">Section 1</h2>
+                <div class="page__hero-swiper">
 
-                <div class="page__section__text">
-                    <p>Тут використовується адаптивний розмір шрифту для заголовка. Представлено дві версії. перша - адаптивна, друга - статична (не змінна). При зміні розміру екрану перша буде мінятись, друга ні.</p>
-                    <pre>
-font-size: calc(24px + 16 * ((100vw - 320px) / (1280 - 320)));
-	тут:
-		24px - це розмір шрифту по макету при мобільній версії сторінки, або, якщо немає макету на мобільну версію,
-                то це мінімальний розмір шрифту при мобільному варіанті сторінки який ми сами обираємо в браузері використовуючи
-                інструменти розробника і там змінюючи розмір шрифта до оптимального розміру. 
-		16 - це різниця між розмірами шрифту по макету між десктопною та мобільною версіями.
-		100vw - ширина viewport, тобто ширина екрана.
-		320px - мінімальний розмір екрана мобільної версії
-		1280 - це ширина сторінки по макету
-		320 - мінімальний розмір екрана мобільної версії
-
-для scss :
-
-$maxWidth: 1200;
-
-@mixin adaptiv-font($pcSize, $mobSize) {
- $addSize: $pcSize - $mobSize;
- $maxWidth: $maxWidth - 320;
- font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
-}
-
-.page__section__title {
-    @include adaptiv-font(40, 24);
-    margin: 0 0 10px 0;
-}
-	тут:
-		$maxWidth - розмір сторінки по макету.
-		$pcSize - розмір шрифту для пк версії.
-		$mobSize - розмір шрифту для мобільної версії.
-		@include adaptive-font(40, 24) - це підключення адаптивної властивості для  css файлу для елементу з класом .page__section__title через 
-                міксини (scss) з вказівкою у дужках розмірів: 40 - для пк версії, 24 - для мобільної версії
-                    </pre>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    
                 </div>
+
+                <div class="page__hero-textbody">
+
+                    <h1 class="page__hero-title">
+                        Ексклюзивні набори солодощів                                        
+                    </h1>
+
+
+                    <p  class="page__hero-text">
+                        <span>для Bаших</span>
+                    </p>
+
+                    <p class="typing-text" >
+                        <span>дітей.</span>
+                        <span>онуків.</span>
+                        <span>друзів.</span>
+                        <span>рідних.</span>
+                    </p>
+
+                    <p class="page__hero-lasttext">
+                        Зі святковим пакуванням або без.
+                    </p>
+
+                    <div class="page__hero-textbody-img">
+                        <img src="./img/about_us_gifka.gif" alt="">
+                    </div>
+
+                    <div class="page__hero-textbody-btn">
+                        <img src="./img/about_us_btn_gif.gif" alt="">
+                    </div>
+
+                </div>
+                
 
             </section>
 
             <section class="page__section page__section-2">
 
-                <h2 class="page__section__title">Section 2</h2>
-
-                <div class="page__section__text">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                </div>
+               
 
             </section>
 
             <section class="page__section conteiner page__section-3">
 
-                <h2 class="page__section__title">Section 3</h2>
 
-                <div class="page__section__text">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum libero ab voluptatem magni, dolores nisi vel nam totam optio iure.</p>
-                </div>
 
             </section>
     
