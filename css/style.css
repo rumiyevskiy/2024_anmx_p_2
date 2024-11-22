@@ -90,12 +90,13 @@ body.__lock {
   border: 1px solid var(--headerMenuItemBrdClr);
   border-radius: 6px;
   background-color: var(--headerMenuItemBgClr);
-  padding: 10px 10px;
 }
 .header__menu__list > li:hover {
   background-color: var(--headerMenuItemBrdClrHover);
 }
 .header__menu__list .header__menu__item {
+  display: block;
+  padding: 10px 10px;
   color: var(--headerMenuItemTxtClr);
   font-size: calc(20px + -6 * (100vw - 320px) / 1120);
 }

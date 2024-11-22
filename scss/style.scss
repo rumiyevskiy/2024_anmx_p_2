@@ -127,7 +127,7 @@ body {
 
         background-color: var(--headerMenuItemBgClr);
 
-        padding: 10px 10px ;
+        // padding: 10px 10px ;
 
         &:hover {
             background-color: var(--headerMenuItemBrdClrHover);
@@ -135,6 +135,9 @@ body {
     }
 
     .header__menu__item {
+        display: block;
+        padding: 10px 10px ;
+
         color: var(--headerMenuItemTxtClr);
         @include adaptiv-font(14, 20);
     }
