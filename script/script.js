@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // перекидання при натисканні
 
-  const menuLinks = document.querySelectorAll('.header__menu__item[data-goto]');
+  const menuLinks = document.querySelectorAll('[data-goto]');
 
   if(menuLinks.length > 0){
     menuLinks.forEach(menuLink => {
