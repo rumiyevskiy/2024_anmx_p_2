@@ -332,8 +332,6 @@ body {
 
     .page__hero-textbody {
         flex: 0 0 50%;
-        // background-color: green;
-
         text-align: center;
 
         .page__hero-title {
@@ -371,23 +369,32 @@ body {
                 }
               }
         }
-    }     
-    
-    .page__hero-textbody-img {
-        display: none;
-
-        img {
-            max-width: 100%;
-        }
-    }
-
-    @media (max-width: 767px) {
-        flex-direction: column-reverse;
 
         .page__hero-textbody-img {
-            display: block;
+            display: none;
+
+            img {
+                max-width: 100%;
+            }
         }
 
+        .page__hero-textbody-btn {
+           height: 128px;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .page__hero-textbody-img {
+                display: block;
+            }
+        }
+    }     
+    
+    @media (max-width: 767px) {
+        flex-direction: column-reverse;
     }
 }
 
