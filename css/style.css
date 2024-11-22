@@ -81,7 +81,6 @@ body.__lock {
 .header__logo.logo__left .img {
   min-width: 45px;
   background-color: red;
-  border-radius: 50%;
   overflow: hidden;
 }
 
@@ -198,22 +197,15 @@ body.__lock {
   .header__menu__list .header__menu__item {
     font-size: 22px;
   }
-  .header__logo.logo__right {
-    flex-direction: row-reverse;
-    flex: 1 1 auto;
-  }
-  .header__logo.logo__right img {
-    border-left: 1px solid #000000;
-  }
-  .header__logo.logo__right div {
-    flex: 1 1 auto;
-    text-align: center;
+  .header__logo.logo__right .header__logo-text {
+    display: none;
   }
   .header__logo.logo__left {
-    border-right: 1px solid #000000;
+    flex: 1 1 auto;
   }
   .header__logo.logo__left .header__logo-text {
-    display: none;
+    flex: 1 1 auto;
+    text-align: center;
   }
 }
 .main {
@@ -237,18 +229,18 @@ body.__lock {
 }
 .page__hero .page__hero-textbody {
   flex: 0 0 50%;
-  background-color: green;
   text-align: center;
 }
 .page__hero .page__hero-textbody .page__hero-title {
-  font-size: calc(32px + 8 * (100vw - 320px) / 1120);
+  font-size: calc(28px + 12 * (100vw - 320px) / 1120);
 }
 .page__hero .page__hero-textbody .page__hero-text {
   display: inline;
-  font-size: calc(24px + -2 * (100vw - 320px) / 1120);
+  font-size: calc(22px + 0 * (100vw - 320px) / 1120);
 }
-.page__hero .page__hero-textbody .page__hero-lasttext {
-  font-size: calc(24px + -2 * (100vw - 320px) / 1120);
+.page__hero .page__hero-textbody .page__hero-simplytext {
+  font-size: calc(18px + 4 * (100vw - 320px) / 1120);
+  margin: 10px 0;
 }
 .page__hero .page__hero-textbody .typing-text {
   display: inline;
@@ -270,6 +262,9 @@ body.__lock {
 }
 .page__hero .page__hero-textbody-img {
   display: none;
+}
+.page__hero .page__hero-textbody-img img {
+  max-width: 100%;
 }
 @media (max-width: 767px) {
   .page__hero {

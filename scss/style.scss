@@ -108,7 +108,7 @@ body {
             min-width: 45px;
             // height: 45px;
             background-color: red;
-            border-radius: 50%;
+            // border-radius: 50%;
             overflow:hidden ;
         }
 
@@ -280,25 +280,28 @@ body {
     }
 
     .header__logo.logo__right {
-        flex-direction: row-reverse;  
-        flex: 1 1 auto;
         
         img {
-            border-left: 1px solid #000000;
-        }
+            // border-left: 1px solid #000000;
+        }       
 
-        div {
-            flex: 1 1 auto;
-            text-align: center;
+        .header__logo-text {
+            display: none;
         }
     }
 
     .header__logo.logo__left {
-        border-right: 1px solid #000000;
-        
+        flex: 1 1 auto;
+
         .header__logo-text {
-            display: none;
+            flex: 1 1 auto;
+            text-align: center;
         }
+
+        .img {
+            // border-right: 1px solid #000000;
+        }      
+        
     }
 }
 
@@ -329,23 +332,23 @@ body {
 
     .page__hero-textbody {
         flex: 0 0 50%;
-        background-color: green;
+        // background-color: green;
 
         text-align: center;
 
         .page__hero-title {
-            @include adaptiv-font(40, 32);
+            @include adaptiv-font(40, 28);
             // display: inline;
         }
     
         .page__hero-text {
             display: inline;
-            @include adaptiv-font(22, 24);
-            // font-size: 26px;
+            @include adaptiv-font(22, 22);
         }
 
-        .page__hero-lasttext {
-            @include adaptiv-font(22, 24);
+        .page__hero-simplytext {
+            @include adaptiv-font(22, 18);
+            margin: 10px 0;
         }
     
         .typing-text {
@@ -372,6 +375,10 @@ body {
     
     .page__hero-textbody-img {
         display: none;
+
+        img {
+            max-width: 100%;
+        }
     }
 
     @media (max-width: 767px) {
