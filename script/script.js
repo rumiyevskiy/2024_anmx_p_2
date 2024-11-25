@@ -327,14 +327,12 @@ document.addEventListener("DOMContentLoaded", function () {
           // spaceBetween: 10
         }
       },
-      pagination: {
-        // el: ".swiper-pagination",
-        clickable: true,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-      },
-    
+
+      // pagination: {
+      //   el: ".swiper-pagination",
+      //   clickable: true,
+      // },
+      
         // Navigation arrows
       navigation: {
         nextEl: '.slider-main-block__arrow.swiper-button-next',
@@ -342,7 +340,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       
       // autoplay: {
-      //   delay: 6000,
+      //   delay: 3000,
       // },
   });
 
@@ -361,25 +359,25 @@ document.addEventListener("DOMContentLoaded", function () {
   //   });
 
 
-    // document.querySelectorAll('.about-content2 .slide-image').forEach(image => {
-    //   image.addEventListener('click', (event) => {
-    //       let imagePath = event.target.src; 
-    //       let rezult = new URL(imagePath).pathname;
-    //       let repoName = '/2024_anmx_p_2';
-    //       if (rezult.startsWith(repoName)) {
-    //           rezult = rezult.replace(repoName, '');
-    //           console.log('replaced');
-    //       }             
-    //       const relativePath = rezult.slice(1);
-    //       const imgElement = document.querySelector("#popup2 .popup-img__item");
-    //       if (imgElement) {
-    //           imgElement.src = relativePath; 
-    //       }
-    //       const curentPopup = document.getElementById("popup2");
-    //       popupOpen(curentPopup);
+    document.querySelectorAll('.page__hero .slide-image').forEach(image => {
+      image.addEventListener('click', (event) => {
+          let imagePath = event.target.src; 
+          let rezult = new URL(imagePath).pathname;
+          let repoName = '/2024_anmx_p_2';
+          if (rezult.startsWith(repoName)) {
+              rezult = rezult.replace(repoName, '');
+              console.log('replaced');
+          }             
+          const relativePath = rezult.slice(1);
+          const imgElement = document.querySelector("#popup1 .popup-img__item");
+          if (imgElement) {
+              imgElement.src = relativePath; 
+          }
+          const curentPopup = document.getElementById("popup1");
+          popupOpen(curentPopup);
 
-    //   });
-    // });
+      });
+    });
   
 
 
