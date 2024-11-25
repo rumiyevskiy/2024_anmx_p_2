@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -308,31 +308,78 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   })
 
-  // **************************************************************************
-  //   let player;
+// ***********************************************************************
 
-  //   // Ініціалізація YouTube API
-  //   function onYouTubeIframeAPIReady() {
-  //       player = new YT.Player('videoPlayer', {
-  //           events: {
-  //           'onReady': onPlayerReady
-  //           }
-            
-  //       });
-  //     console.log("player: ", player);
-  //   }
+    const swiper = new Swiper('.slider-main-block', {
+      // Optional parameters
+      loop: true,
 
-  // function onPlayerReady(event) {
-  //   console.log("player2: ", player);
-  //       // Обробка натискання кнопки
-  //   document.querySelector('.close-popup').addEventListener('click', () => {
-  //     console.log("player3: ", player);
-  //           if (player) {
-  //               player.pauseVideo(); // Зупиняє відео
-  //           }
-  //       });
-  // };
-  // **************************************************************************
+      effect: "coverflow",
+
+      slidesPerView: 1,
+      centeredSlides: true,
+      spaceBetween: 0,
+      grabCursor: true,
+
+      breakpoints: {
+        640: {
+          slidesPerView: 3,
+          // spaceBetween: 10
+        }
+      },
+      pagination: {
+        // el: ".swiper-pagination",
+        clickable: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    
+        // Navigation arrows
+      navigation: {
+        nextEl: '.slider-main-block__arrow.swiper-button-next',
+        prevEl: '.slider-main-block__arrow.swiper-button-prev',
+      },
+      
+      // autoplay: {
+      //   delay: 6000,
+      // },
+  });
+
+  // const swiper2 = new Swiper('.slider-main-block2', {
+  //     // Optional parameters
+  //     loop: true,
+    
+  //       // Navigation arrows
+  //     navigation: {
+  //       nextEl: '.slider-main-block__arrow.swiper-button-next',
+  //       prevEl: '.slider-main-block__arrow.swiper-button-prev',
+  //     },
+  //     autoplay: {
+  //       delay: 3000,
+  //     },
+  //   });
+
+
+    // document.querySelectorAll('.about-content2 .slide-image').forEach(image => {
+    //   image.addEventListener('click', (event) => {
+    //       let imagePath = event.target.src; 
+    //       let rezult = new URL(imagePath).pathname;
+    //       let repoName = '/2024_anmx_p_2';
+    //       if (rezult.startsWith(repoName)) {
+    //           rezult = rezult.replace(repoName, '');
+    //           console.log('replaced');
+    //       }             
+    //       const relativePath = rezult.slice(1);
+    //       const imgElement = document.querySelector("#popup2 .popup-img__item");
+    //       if (imgElement) {
+    //           imgElement.src = relativePath; 
+    //       }
+    //       const curentPopup = document.getElementById("popup2");
+    //       popupOpen(curentPopup);
+
+    //   });
+    // });
   
 
 
