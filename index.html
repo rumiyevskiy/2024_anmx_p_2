@@ -11,7 +11,9 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script> 
+
+    <!-- <script src="https://www.youtube.com/iframe_api"></script>    -->
     
     <!-- <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
@@ -165,9 +167,16 @@
                         <img src="./img/about_us_gifka.gif" alt="">
                     </div>
 
+                    
                     <div class="page__hero-textbody-btn">
-                        <img src="./img/about_us_btn_gif.gif" alt="">
+                        <a href="#popup2" class="popup-link">
+                            <img src="./img/about_us_btn_gif.gif" alt="">
+                        </a>
                     </div>
+                    
+                    <!-- <div class="page__hero-textbody-btn popup-link">
+                        <img src="./img/about_us_btn_gif.gif" alt="">
+                    </div> -->
 
                     <p class="page__hero-simplytext">
                         Подаруємо емоції і дітям і дорослим
@@ -208,9 +217,53 @@
 
     </div>
 
+    <div id="popup2" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">                
+
+                <div class="popup-img video">
+                    <!-- <img class="popup-img__item" src="https://youtube.com/shorts/wOe2cV6mt8c?si=tqE9ZRPOVC6w8St-" alt=""> -->
+
+                    <!-- <img class="popup-img__item" src="https://i.ytimg.com/vi/wOe2cV6mt8c/oar2.jpg?sqp=-oaymwEdCJUDENAFSFWQAgHyq4qpAwwIARUAAIhCcAHAAQY=&amp;rs=AOn4CLBg7KnrgQW17rnzixDdX5U-CEkGFA" alt=""> -->
+
+                    <iframe 
+                        class="popup-img__item"
+                        id="videoPlayer"
+
+                        src="https://www.youtube.com/embed/wOe2cV6mt8c?enablejsapi=1" 
+                        title="Желейний сюрприз: краса, що тане на язиці!  #подарунки  #діти" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture;" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+
+                    <!-- id="videoPlayer"
+                        width="357" 
+                        height="635" 
+                        src="https://www.youtube.com/embed/wOe2cV6mt8c" 
+                        title="Желейний сюрприз: краса, що тане на язиці!  #подарунки  #діти" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen> -->
+
+                    <!-- <button class="video__button" aria-label="Запустить видео">
+
+                        <img src="" alt="">
+                        <svg width="68" height="48" viewBox="0 0 68 48"><path class="video__button-shape" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"></path><path class="video__button-icon" d="M 45,24 27,14 27,34"></path></svg>
+                    </button> -->
+                    
+                </div>
+
+                <a href="#" class="popup__close close-popup">X</a>
+                
+            </div>
+        </div>
+    </div>
+
     
     
-    
+    <!-- <script src="https://www.youtube.com/iframe_api"></script> -->
     <script type="module" src="script/script.js"></script>
 </body>
 </html>
