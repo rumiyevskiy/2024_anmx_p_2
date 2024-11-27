@@ -698,14 +698,15 @@ body {
 
             .section-2__text-body {
                 @include adaptiv-font(18, 20);
+                padding-left: 20px;
 
                 .text-body-title {
-
+                    text-align: left;
                 }
 
                 .text-body-list {
                     text-align: left;
-                    padding-left: 80px;
+                    padding-left: 30px;
 
                     li {
                         margin: 10px 0;
@@ -734,6 +735,12 @@ body {
 
         @media (max-width: 992px) {
             max-width: none;
+        }
+
+        @media (max-width: 768px) {
+            .item__1 {
+                display: none;
+            }
         }
     }
     

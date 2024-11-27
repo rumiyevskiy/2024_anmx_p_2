@@ -510,10 +510,14 @@ body.__lock {
 }
 .page__section-2 .section-2__body .item__2 .section-2__text-body {
   font-size: calc(20px + -2 * (100vw - 320px) / 1120);
+  padding-left: 20px;
+}
+.page__section-2 .section-2__body .item__2 .section-2__text-body .text-body-title {
+  text-align: left;
 }
 .page__section-2 .section-2__body .item__2 .section-2__text-body .text-body-list {
   text-align: left;
-  padding-left: 80px;
+  padding-left: 30px;
 }
 .page__section-2 .section-2__body .item__2 .section-2__text-body .text-body-list li {
   margin: 10px 0;
@@ -537,6 +541,11 @@ body.__lock {
 @media (max-width: 992px) {
   .page__section-2 .section-2__body {
     max-width: none;
+  }
+}
+@media (max-width: 768px) {
+  .page__section-2 .section-2__body .item__1 {
+    display: none;
   }
 }
 
