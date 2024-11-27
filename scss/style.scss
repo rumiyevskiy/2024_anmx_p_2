@@ -995,7 +995,8 @@ body {
         margin: 0 auto;
 
         .section-4__body-item {
-            flex: 1 1 49%;
+            flex: 1 1 20%;
+            // flex: 1 1 49%;
             padding: 10px;
 
             text-align: center;
@@ -1050,13 +1051,16 @@ body {
         }
 
         @media (max-width: 768px) {
-            flex-direction: column-reverse;
+            // flex-direction: column-reverse;
         }
 
         .item__1 {
             // border: 1px solid #808080;
+            flex: 1 1 49%;
         }
+
         .item__2 {
+            flex: 1 1 49%;
 
             .section-4__title {
                 color: #ff0000;
@@ -1088,15 +1092,22 @@ body {
                     font-weight: 700;
                 }
             }
+
+            @media (max-width: 768px) {
+                height: 400px;
+            }
         }        
         
         .item__3 {
-
+            flex: 1 1 49%;
         }
+
         .item__4 {
-
+            flex: 1 1 49%;
         }
+
         .item__5 {
+
 
         }
         .item__6 {
