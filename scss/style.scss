@@ -652,7 +652,7 @@ body {
 
         .section-2__body-item {
             flex: 1 1 33.3%;
-            padding: 10px;
+            padding: 0 10px;
 
             text-align: center;
 
@@ -722,8 +722,9 @@ body {
                 }
 
                 .text-body-text {
-                    margin: 20px 0;
+                    margin: 20px 0 0 0;
                     font-weight: 700;
+                    @include adaptiv-font(18, 20);
                 }
             }
         }        
@@ -1000,23 +1001,24 @@ body {
             text-align: center;
 
             min-width: 280px;
+            min-height: 300px;
 
             position: relative;
-            height: 0;
+            // height: 0;
             // padding-bottom: 40%; 
-            padding-bottom: 56.25%; 
+            // // padding-bottom: 56.25%; 
             overflow: hidden;
 
             .img {
                 // // max-width: 100%;
                 // // height: 300px;
 
-                position: absolute;
-                top: 0;
-                left: 50%;
+                // position: absolute;
+                // top: 0;
+                // left: 50%;
                 // max-width: 100%;
                 // height: 100%;
-                transform: translate(-50%, 0);
+                // transform: translate(-50%, 0);
 
                 @media (max-width: 1220px) {
                     max-height: 100%;
@@ -1026,12 +1028,12 @@ body {
 
             .img__1 {
                 // position: absolute;
-                // max-width: 100%;
-                // left: 0;
+                max-width: 100%;
+                // left: -5px;
             }
 
             .img__2{
-                // position: absolute;
+                position: absolute;
                 width: 150px;
                 // height: 500px;
                 // top: 0;
@@ -1043,7 +1045,13 @@ body {
             @media (max-width: 1220px) {
                 height: 330px;
             }
+            
         }
+
+        @media (max-width: 768px) {
+            flex-direction: column-reverse;
+        }
+
         .item__1 {
             // border: 1px solid #808080;
             order: 0;
@@ -1077,7 +1085,7 @@ body {
                 }
 
                 .text-body-text {
-                    margin: 20px 0;
+                    margin: 20px 0 ;
                     font-weight: 700;
                 }
             }
