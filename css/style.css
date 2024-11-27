@@ -675,11 +675,6 @@ body.__lock {
   left: 60%;
   transform: translate(0, 0);
 }
-@media (max-width: 1220px) {
-  .page__section-4 .section-4__body .section-4__body-item {
-    height: 330px;
-  }
-}
 .page__section-4 .section-4__body .item__1 {
   flex: 1 1 49%;
 }
