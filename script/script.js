@@ -496,24 +496,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // *****************************************************************
 
-  const mainForm = document.getElementById('form');
+  const mainFormOrder = document.querySelector('.popup3 .full-form');
+  const mainForm = document.querySelector('.page__section-3 .full-form');
 
   // Логіка обробки форми
-  mainForm.addEventListener('submit', (event) => {
+  mainFormOrder.addEventListener('submit', (event) => {
     event.preventDefault(); // Зупиняємо стандартну поведінку форми
-    if (!mainForm.privacy.checked) {
+    if (!mainFormOrder.privacy.checked) {
       const privacy = document.querySelector(".privacy-policy");
       privacy.classList.add("error");
       alert("Заповніть всі поля!")
       return;
     }
-    const privacy = document.querySelector(".privacy-policy");
-    privacy.classList.remove("error");
-      sendTelegram(); // Викликаємо функцію для відправки в Telegram
+    const privacyElem = document.querySelector(".privacy-policy");
+    privacyElem.classList.remove("error");
+    const name = mainFormOrder.name.value;
+    const phone = mainFormOrder.phone.value;
+    const email = mainFormOrder.email.value;
+    const request = hiddenInputNum.value;    
+    const select_type = hiddenInputСomposition.value;
+    const privacy = mainFormOrder.privacy.checked ? 'Так' : 'Ні';
+      sendTelegram(name, phone, email, request, select_type, privacy); // Викликаємо функцію для відправки в Telegram
+  });
+
+  mainForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Зупиняємо стандартну поведінку форми
+    const name = mainForm.name.value;
+    const phone = mainForm.phone.value;
+    const email = mainForm.email.value;
+    sendTelegram(name, phone, email); // Викликаємо функцію для відправки в Telegram
   });
 
   // Функція для відправки повідомлення в Telegram
-  async function sendTelegram() {
+  async function sendTelegram(name, phone, email, request, select_type, privacy) {
         
 
     // let optionValueTypeServices = document.querySelector("#select_services");
@@ -529,22 +544,28 @@ document.addEventListener("DOMContentLoaded", function () {
     // const botToken = '7648355172:AAE4jsw4ZfadhgoEezXJyy0X7U4EQwFkkbQ'; // Токен бота
     // const chatId = '-4588952109'; // ID чату
     
-        const name = mainForm.name.value;
-        const phone = mainForm.phone.value;
-        const email = mainForm.email.value;
-        const request = hiddenInputNum.value;    
-        const select_type = hiddenInputСomposition.value;
-        const privacy = mainForm.privacy.checked ? 'Так' : 'Ні';
+        // const name = name;
+        // const phone = phone;
+        // const email = email;
+        // const request = request;    
+        // const select_type = select_type;
+        // const privacy = privacy;
+        // const name = mainForm.name.value;
+        // const phone = mainForm.phone.value;
+        // const email = mainForm.email.value;
+        // const request = hiddenInputNum.value;    
+        // const select_type = hiddenInputСomposition.value;
+        // const privacy = mainFormOrder.privacy.checked ? 'Так' : 'Ні';
 
         const bodymessage = `
             Запит з сайту Annamax
             Ім'я: ${name}
             Телефон: ${phone}
             Пошта: ${email}
-            Літери: ${request}
-            Наповнювачи: ${select_type}
+            Літери: ${request||""}
+            Наповнювачи: ${select_type||""}
 
-            Згода на обробку даних: ${privacy}
+            Згода на обробку даних: ${privacy||"так"}
         `;
 
         // Відправка через API Telegram
@@ -575,7 +596,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // sendEmail(name, phone, email, request, select_type, select_services, privacy);
 
                 // Автоматичне надсилання повідомлення на пошту, повідомлення не бачно
-                sendEmail2();
+                sendEmail2(name, phone, email, request, select_type, privacy);
 
             } else {
 
@@ -596,7 +617,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
   }
   
-  function sendEmail2() {
+  function sendEmail2(name, phone, email, request, select_type, privacy) {
 
     // сайт: https://dashboard.emailjs.com/admin/account
     // це Public Key з розділу account/general:API keys
@@ -627,12 +648,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // const select_services = optionValueTypeServicesUkr;
     // const privacy = mainForm.privacy.checked ? 'Так' : 'Ні';
 
-    const name = mainForm.name.value;
-        const phone = mainForm.phone.value;
-        const email = mainForm.email.value;
-        const request = hiddenInputNum.value;    
-        const select_type = hiddenInputСomposition.value;
-        const privacy = mainForm.privacy.checked ? 'Так' : 'Ні';
+    // const name = mainForm.name.value;
+    //     const phone = mainForm.phone.value;
+    //     const email = mainForm.email.value;
+    //     const request = hiddenInputNum.value;    
+    //     const select_type = hiddenInputСomposition.value;
+    //     const privacy = mainForm.privacy.checked ? 'Так' : 'Ні';
 
     // Параметри для Email.js, тут ми формуємо об'єкт, який надішлемо до пошти, вказаної при реєстрації на сервісі emailjs. тут головне: щоб назви ключей відповідали змінним у подвійних дужках {{}} в темплейті(шаблоні) в сервісі emailjs
     const templateParams = {
@@ -640,10 +661,10 @@ document.addEventListener("DOMContentLoaded", function () {
         name: `${name} from site "Annamax" `,
         phone: phone,
         email: email,
-        comments: request,
-        carType: select_type,
+        comments: request||"",
+        carType: select_type||"",
         // service: select_services,
-        privacy: privacy,
+        privacy: privacy||"Так",
     };
 
     // сюда SERVICE_ID записується Service ID з вкладки Edit Service який ми отримали при додаванні сервіса, яким будемо користуватися при надсиланнях повідомлень в emailjs. я використовував gmail
