@@ -1029,6 +1029,7 @@ body {
             .img__1 {
                 // position: absolute;
                 max-width: 100%;
+                height: 300px;
                 // left: -5px;
             }
 
@@ -1054,10 +1055,8 @@ body {
 
         .item__1 {
             // border: 1px solid #808080;
-            order: 0;
         }
         .item__2 {
-            order: 1;
 
             .section-4__title {
                 color: #ff0000;
@@ -1092,16 +1091,16 @@ body {
         }        
         
         .item__3 {
-            order: 2;
+
         }
         .item__4 {
-            order: 3;
+
         }
         .item__5 {
-            order: 4;
+
         }
         .item__6 {
-            order: 5;
+
         }
 
         @media (max-width: 992px) {
