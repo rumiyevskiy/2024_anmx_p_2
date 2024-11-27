@@ -655,8 +655,6 @@ body {
 
             text-align: center;
 
-            border: 1px solid gray;
-            // min-height: 50px;
             min-width: 280px;
 
             position: relative;
@@ -676,13 +674,13 @@ body {
                 // height: 100%;
                 transform: translate(-50%, 0);
 
-                @media (max-width: 768px) {
+                @media (max-width: 1220px) {
                     max-height: 300px;
                 }
             }
 
-            @media (max-width: 768px) {
-                height: 300px;
+            @media (max-width: 1220px) {
+                height: 330px;
             }
         }
         .item__1 {
@@ -699,9 +697,24 @@ body {
             }
 
             .section-2__text-body {
+                @include adaptiv-font(18, 20);
+
                 .text-body-title {
+
                 }
+
                 .text-body-list {
+                    text-align: left;
+                    padding-left: 80px;
+
+                    li {
+                        margin: 10px 0;
+                    }
+                }
+
+                .text-body-text {
+                    margin: 20px 0;
+                    font-weight: 700;
                 }
             }
         }        
