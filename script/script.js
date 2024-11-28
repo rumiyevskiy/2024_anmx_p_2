@@ -359,9 +359,10 @@ document.addEventListener("DOMContentLoaded", function () {
   //   });
 
 
-    document.querySelectorAll('.page__hero .slide-image').forEach(image => {
+    document.querySelectorAll('.page__hero,.page__about .slide-image').forEach(image => {
       image.addEventListener('click', (event) => {
-          let imagePath = event.target.src; 
+        let imagePath = event.target.src; 
+        console.log(imagePath);
           let rezult = new URL(imagePath).pathname;
           let repoName = '/2024_anmx_p_2';
           if (rezult.startsWith(repoName)) {
