@@ -690,8 +690,49 @@ document.addEventListener("DOMContentLoaded", function () {
             // alert(msgErrVar);
             alert('Сталася помилка при відправці.');
         });
-}
+  }
   
+  // *******************************************************
+   
+    // Отримуємо всі елементи з класом "collapsible"
+    const collapsibles = document.querySelectorAll(".collapsible");
+  
+    collapsibles.forEach((collapsible) => {
+      const header = collapsible.querySelector(".collapsible__header");
+      const content = collapsible.querySelector(".collapsible__content");
+  
+      header.addEventListener("click", () => {
+        const isExpanded = collapsible.classList.contains("collapsible--expanded");
+  
+        if (isExpanded) {
+          // Згорнути
+          content.style.height = `${content.scrollHeight}px`;
+          requestAnimationFrame(() => {
+            content.style.height = "0";
+          });
+        } else {
+          // Розгорнути
+          content.style.height = `${content.scrollHeight}px`;
+        }
+  
+        collapsible.classList.toggle("collapsible--expanded");
+  
+        content.addEventListener(
+          "transitionend",
+          () => {
+            if (!isExpanded) {
+              content.style.height = "auto";
+            }
+          },
+          { once: true }
+        );
+      });
+    });
+ 
+  
+
+  // *******************************************************
+
 
 
 });
