@@ -224,8 +224,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (popupCloseIcon.length > 0) {
       for (let index = 0; index < popupCloseIcon.length; index++) {
           const el = popupCloseIcon[index];
-          el.addEventListener("click", function (e) {
-              popupClose(el.closest('.popup'));
+        el.addEventListener("click", function (e) {
+            
+            popupClose(el.closest('.popup'));
+
+            funcSelectReset();
+
               e.preventDefault();
           });
       }
@@ -339,24 +343,80 @@ document.addEventListener("DOMContentLoaded", function () {
         prevEl: '.slider-main-block__arrow.swiper-button-prev',
       },
       
-      // autoplay: {
-      //   delay: 3000,
+      autoplay: {
+        delay: 3000,
+      },
+    });
+  
+    const swiper2 = new Swiper('.slider-main-block2', {
+      // Optional parameters
+      loop: true,
+
+      effect: "coverflow",
+
+      slidesPerView: 1,
+      centeredSlides: true,
+      spaceBetween: 0,
+      grabCursor: true,
+
+      breakpoints: {
+        640: {
+          slidesPerView: 3,
+          // spaceBetween: 10
+        }
+      },
+
+      // pagination: {
+      //   el: ".swiper-pagination",
+      //   clickable: true,
       // },
+      
+        // Navigation arrows
+      navigation: {
+        nextEl: '.slider-main-block2__arrow.swiper-button-next',
+        prevEl: '.slider-main-block2__arrow.swiper-button-prev',
+      },
+      
+      autoplay: {
+        delay: 2000,
+      },
+    });
+  
+    const swiper3 = new Swiper('.slider-main-block3', {
+      // Optional parameters
+      loop: true,
+
+      effect: "coverflow",
+
+      slidesPerView: 1,
+      centeredSlides: true,
+      spaceBetween: 0,
+      grabCursor: true,
+
+      breakpoints: {
+        640: {
+          slidesPerView: 3,
+          // spaceBetween: 10
+        }
+      },
+
+      // pagination: {
+      //   el: ".swiper-pagination",
+      //   clickable: true,
+      // },
+      
+        // Navigation arrows
+      navigation: {
+        nextEl: '.slider-main-block3__arrow.swiper-button-next',
+        prevEl: '.slider-main-block3__arrow.swiper-button-prev',
+      },
+      
+      autoplay: {
+        delay: 6000,
+      },
   });
 
-  // const swiper2 = new Swiper('.slider-main-block2', {
-  //     // Optional parameters
-  //     loop: true,
-    
-  //       // Navigation arrows
-  //     navigation: {
-  //       nextEl: '.slider-main-block__arrow.swiper-button-next',
-  //       prevEl: '.slider-main-block__arrow.swiper-button-prev',
-  //     },
-  //     autoplay: {
-  //       delay: 3000,
-  //     },
-  //   });
+  
 
 
     document.querySelectorAll('.page__hero,.page__about .slide-image').forEach(image => {
@@ -494,6 +554,21 @@ document.addEventListener("DOMContentLoaded", function () {
     page_2.classList.remove("pagehidden");
     event.preventDefault();
   });
+
+  const funcSelectReset = (event) => {
+    const mainFormOrder = document.querySelector('.popup3 .full-form');
+    // mainFormOrder.reset();
+    const inputs = mainFormOrder.querySelectorAll('input');
+    inputs.forEach(input => input.value = '');
+    const optionsForReset = document.querySelectorAll(".popup3 .full-form .option.selected");
+    console.log("optionsForReset: ", optionsForReset);
+    optionsForReset.forEach(opt => {
+      opt.classList.remove("selected");
+    });
+    console.log("mainFormOrder reseted");
+  }
+  
+  btnResetPage3.addEventListener("click", funcSelectReset);
 
   // *****************************************************************
 
@@ -694,41 +769,48 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   
   // *******************************************************
-   
+    
+
     // Отримуємо всі елементи з класом "collapsible"
-    const collapsibles = document.querySelectorAll(".collapsible");
-  
-    collapsibles.forEach((collapsible) => {
-      const header = collapsible.querySelector(".collapsible__header");
-      const content = collapsible.querySelector(".collapsible__content");
-  
-      header.addEventListener("click", () => {
-        const isExpanded = collapsible.classList.contains("collapsible--expanded");
-  
-        if (isExpanded) {
-          // Згорнути
-          content.style.height = `${content.scrollHeight}px`;
-          requestAnimationFrame(() => {
-            content.style.height = "0";
-          });
-        } else {
-          // Розгорнути
-          content.style.height = `${content.scrollHeight}px`;
-        }
-  
-        collapsible.classList.toggle("collapsible--expanded");
-  
-        content.addEventListener(
-          "transitionend",
-          () => {
-            if (!isExpanded) {
-              content.style.height = "auto";
-            }
-          },
-          { once: true }
-        );
-      });
+  const collapsibles = document.querySelectorAll(".collapsible");
+
+  collapsibles.forEach((collapsible) => {
+    const header = collapsible.querySelector(".collapsible__header");
+    const content = collapsible.querySelector(".collapsible__content");
+
+    header.addEventListener("click", () => {
+      const isExpanded = collapsible.classList.contains("collapsible--expanded");
+
+      if (isExpanded) {
+        // Згорнути
+        content.style.height = `${content.scrollHeight}px`; // Встановлюємо початкову висоту
+        requestAnimationFrame(() => {
+          content.style.height = "0"; // Анімуємо до 0
+        });
+
+        collapsible.classList.remove("collapsible--expanded");
+      } else {
+        // Розгорнути
+        content.style.height = "0"; // Починаємо з 0
+        requestAnimationFrame(() => {
+          content.style.height = `${content.scrollHeight}px`; // Анімуємо до scrollHeight
+        });
+
+        collapsible.classList.add("collapsible--expanded");
+      }
+
+      // Скидаємо висоту після завершення анімації
+      content.addEventListener(
+        "transitionend",
+        () => {
+          if (!isExpanded) {
+            content.style.height = "auto"; // Встановлюємо auto, щоб працювало з динамічним контентом
+          }
+        },
+        { once: true }
+      );
     });
+  });
  
   
 
