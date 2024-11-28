@@ -661,8 +661,12 @@ body.__lock {
   background-color: #f0f0f0;
 }
 .page__section-3 .popup__form .page__section-3-title {
-  font-size: calc(20px + 11 * (100vw - 320px) / 1120);
+  font-size: calc(20px + 5 * (100vw - 320px) / 1120);
   text-align: center;
+  margin: 10px 0;
+}
+.page__section-3 .popup__form .page__section-3-title:nth-child(even) {
+  color: #008000;
 }
 .page__section-3 .popup__form .form__content-page-3 .input__box .input {
   border-style: solid;
