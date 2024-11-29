@@ -1913,7 +1913,101 @@ body {
 // *************************************************
 
 .footer {
-    background-color: #008000;
+    border: 1px solid #008000;
+
+    .footer__body {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center;
+        align-self: center;
+
+        .footer-body__section {
+
+            
+        }
+
+        .footer-Section__logo {
+
+            .footer__logo-box {
+                display: flex;
+
+                .footer__logo {
+                    position: relative;
+                    z-index: 5;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                
+                    & img {
+                        width: 45px;
+                        height: 45px;
+                    }
+                
+                    &.logo__left {
+                
+                        & .text {
+                            color: #ffffff;
+                        }
+                        
+                
+                        .img {
+                            // min-width: 45px;
+                            width: 45px;
+                            height: 45px;
+                            background-color: red;
+                            border-radius: 50%;
+                            overflow:hidden ;
+                            position: relative;
+                            flex: 0 0 auto;
+                
+                            img {
+                                position: absolute;
+                                bottom: 0;
+                                right: 0;
+                                max-width: 50%;
+                                height: 50%;
+                                transform: rotate(90deg);
+                            }
+                
+                            .text {
+                                text-align: center;
+                                font-size: 8px;
+                                font-weight: 600;
+                                position: absolute;
+                                top: 20%;
+                                left: 3%;
+                            }           
+                
+                        }
+                
+                    }
+    
+                    &.logo__right {
+    
+                    }
+                    
+                    .footer__logo-text{
+    
+                    }
+                    
+                
+                }
+            }
+
+        }
+
+        
+
+        
+
+        .footer__contacts {
+        }
+        .footer__info {
+        }
+    }
+
+    
 }
 
 // *************************************************
