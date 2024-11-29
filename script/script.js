@@ -256,10 +256,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (unlock) {
         
       const videoElem = document.getElementById("videoPlayer");
-      // videoElem.style.display = "none";
-
+      videoElem.setAttribute('src', "https://www.youtube.com/embed/wOe2cV6mt8c?enablejsapi=1");
       document.getElementById("videoPlayer").contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
-      console.log("popup closed", videoElem);
+
 
         popupActive.classList.remove('open');
         
@@ -813,6 +812,79 @@ document.addEventListener("DOMContentLoaded", function () {
   });
  
   
+
+  // *******************************************************
+  function findVideos() {
+    let videos = document.querySelectorAll('.video__body-item');
+
+    console.log("videos: ", videos);
+
+    for (let i = 0; i < videos.length; i++) {
+        setupVideo(videos[i]);
+    }
+}
+
+function setupVideo(video) {
+  let linkVideoHref = video.querySelector('.video__link').href;
+  console.log("linkVideo: ", linkVideoHref);
+    // let media = video.querySelector('.video__media');
+    let button = video.querySelector('.video__button');
+  // let id = parseMediaURL(media);
+  
+  
+
+
+  video.addEventListener('click', (event) => {
+    event.preventDefault();
+      let popupBody = document.getElementById("videoPlayer");
+    console.log("popupBody: ", popupBody);
+    let iframeSrcValue = linkVideoHref + '?enablejsapi=1';
+    popupBody.setAttribute('src', iframeSrcValue);
+    let  videoPopup = document.getElementById("popup2");
+               popupOpen(videoPopup);
+        // let iframe = createIframe(id);
+
+        // link.remove();
+        // button.remove();
+        // video.appendChild(iframe);
+    });
+
+    // link.removeAttribute('href');
+    // video.classList.add('video--enabled');
+}
+
+// function parseMediaURL(media) {
+//     let regexp = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i;
+//     let url = media.src;
+//     let match = url.match(regexp);
+
+//     return match[1];
+// }
+
+// function createIframe(id) {
+//     let iframe = document.createElement('iframe');
+
+//     iframe.setAttribute('allowfullscreen', '');
+//     iframe.setAttribute('allow', 'autoplay');
+//     iframe.setAttribute('src', generateURL(id));
+//     iframe.classList.add('video__media');
+
+//     return iframe;
+// }
+
+// function generateURL(id) {
+//     let query = '?rel=0&showinfo=0&autoplay=1';
+
+//     return 'https://www.youtube.com/embed/' + id + query;
+// }
+
+  findVideos();
+
+
+  // *******************************************************
+
+
+
 
   // *******************************************************
 

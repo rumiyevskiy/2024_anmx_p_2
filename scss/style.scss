@@ -1811,6 +1811,69 @@ body {
             width: 100%;
             height: 0;
             padding-bottom: 56.25%;
+
+            .video__link {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+                .video__media {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                }
+            }
+
+            .video__button {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: 1;
+                display: none;
+                padding: 0;
+                width: 68px;
+                height: 48px;
+                border: none;
+                background-color: transparent;
+                transform: translate(-50%, -50%);
+                cursor: pointer;
+
+                .video__button-shape {
+                    fill: #212121;
+                    fill-opacity: 0.8;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .video__button-icon {
+                fill: #ffffff;
+            }
+
+            &:hover .video__button-shape,
+            .video__button:focus .video__button-shape {
+                fill: #ff0000;
+                fill-opacity: 1;
+            }
+
+            &.video--enabled {
+                cursor: pointer;
+            }
+            
+            &.video--enabled .video__button {
+                display: block;
+            }
+
+            @media (max-width: 768px) {
+                padding-bottom: 66.25%;
+            }
         }
     }
 
@@ -1819,7 +1882,12 @@ body {
     }
 
     @media (max-width: 960px) {
-        padding: 0 50px 10px
+        padding: 0 50px 10px;
+
+        .section-video__body {
+            grid-template-columns: 1fr 1fr;
+
+        }
     }
 
     @media (max-width: 768px) {
@@ -1827,6 +1895,15 @@ body {
 
         .section-video__body {
             grid-template-columns: 1fr 1fr;
+
+        }
+    }
+
+    @media (max-width: 425px) {
+        padding: 0 10px 10px;
+
+        .section-video__body {
+            grid-template-columns: 1fr ;
 
         }
     }

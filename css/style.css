@@ -1137,6 +1137,61 @@ body.__lock {
   height: 0;
   padding-bottom: 56.25%;
 }
+.page__section-video .section-video__body .video__body-item .video__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.page__section-video .section-video__body .video__body-item .video__link .video__media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.page__section-video .section-video__body .video__body-item .video__button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  display: none;
+  padding: 0;
+  width: 68px;
+  height: 48px;
+  border: none;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.page__section-video .section-video__body .video__body-item .video__button .video__button-shape {
+  fill: #212121;
+  fill-opacity: 0.8;
+}
+.page__section-video .section-video__body .video__body-item .video__button:focus {
+  outline: none;
+}
+.page__section-video .section-video__body .video__body-item .video__button-icon {
+  fill: #ffffff;
+}
+.page__section-video .section-video__body .video__body-item:hover .video__button-shape,
+.page__section-video .section-video__body .video__body-item .video__button:focus .video__button-shape {
+  fill: #ff0000;
+  fill-opacity: 1;
+}
+.page__section-video .section-video__body .video__body-item.video--enabled {
+  cursor: pointer;
+}
+.page__section-video .section-video__body .video__body-item.video--enabled .video__button {
+  display: block;
+}
+@media (max-width: 768px) {
+  .page__section-video .section-video__body .video__body-item {
+    padding-bottom: 66.25%;
+  }
+}
 @media (max-width: 1224px) {
   .page__section-video {
     padding: 0 100px 10px;
@@ -1146,6 +1201,9 @@ body.__lock {
   .page__section-video {
     padding: 0 50px 10px;
   }
+  .page__section-video .section-video__body {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media (max-width: 768px) {
   .page__section-video {
@@ -1153,6 +1211,14 @@ body.__lock {
   }
   .page__section-video .section-video__body {
     grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 425px) {
+  .page__section-video {
+    padding: 0 10px 10px;
+  }
+  .page__section-video .section-video__body {
+    grid-template-columns: 1fr;
   }
 }
 
