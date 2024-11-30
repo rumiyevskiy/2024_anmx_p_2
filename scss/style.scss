@@ -1928,9 +1928,12 @@ body {
         }
 
         .footer-Section__logo {
+            border: 1px solid #808080;
+            
 
             .footer__logo-box {
                 display: flex;
+                justify-content: space-between;
 
                 .footer__logo {
                     position: relative;
@@ -1986,23 +1989,37 @@ body {
                     &.logo__right {
     
                     }
-                    
-                    .footer__logo-text{
-    
-                    }
-                    
-                
+                }                
+            }
+
+            .footer__logo-text{
+                text-align: center;
+
+                p{
+                    margin: 5px 0;
                 }
+                
             }
 
         }
 
-        
-
-        
-
         .footer__contacts {
+            text-align: center;
+
+            .accent-color {
+                color: rgb(178, 164, 89);
+            }
+
+            .contacts__title {
+                @include adaptiv-font(22, 20)
+            }
+
+            div {
+                margin: 5px 0;
+            }
+
         }
+
         .footer__info {
         }
     }
