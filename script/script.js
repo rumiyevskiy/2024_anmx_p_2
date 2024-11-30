@@ -223,15 +223,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const popupCloseIcon = document.querySelectorAll('.close-popup');
   if (popupCloseIcon.length > 0) {
       for (let index = 0; index < popupCloseIcon.length; index++) {
-          const el = popupCloseIcon[index];
-        el.addEventListener("click", function (e) {
-            
-            popupClose(el.closest('.popup'));
+        const el = popupCloseIcon[index];
 
-            funcSelectReset();
+        el.addEventListener("click", function (e) {
+                     
+          popupClose(el.closest('.popup'));
+
+            // funcSelectReset();
 
               e.preventDefault();
-          });
+        });
       }
   };
 
@@ -259,6 +260,12 @@ document.addEventListener("DOMContentLoaded", function () {
       videoElem.setAttribute('src', "https://www.youtube.com/embed/wOe2cV6mt8c?enablejsapi=1");
       document.getElementById("videoPlayer").contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
 
+      if (popupActive.querySelector('.full-form')) {
+        console.log('Елемент з класом .full-form знайдено у .popup, незалежно від рівня вкладеності');
+        funcSelectReset();
+      } else {
+          console.log('Елемент з класом .full-form не знайдено у .popup');
+      }
 
         popupActive.classList.remove('open');
         
@@ -521,6 +528,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   btnResetPage2.addEventListener("click", () => {
     optionsСomposition.forEach((opt) => opt.classList.remove("selected"));
+    selectedValues.clear();
     hiddenInputСomposition.value = "";
     console.log("selectValueCompose: ", hiddenInputСomposition.value);
   });
@@ -555,16 +563,26 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const funcSelectReset = (event) => {
+
     const mainFormOrder = document.querySelector('.popup3 .full-form');
     // mainFormOrder.reset();
+    selectedValues.clear();
     const inputs = mainFormOrder.querySelectorAll('input');
     inputs.forEach(input => input.value = '');
     const optionsForReset = document.querySelectorAll(".popup3 .full-form .option.selected");
+    console.log("selectedValues: ", selectedValues);
     console.log("optionsForReset: ", optionsForReset);
     optionsForReset.forEach(opt => {
       opt.classList.remove("selected");
     });
     console.log("mainFormOrder reseted");
+
+    alert("Всі данні в формі видалені! ");
+
+    page_1.classList.remove("pagehidden");
+    page_2.classList.add("pagehidden");
+    page_3.classList.add("pagehidden");
+  
   }
   
   btnResetPage3.addEventListener("click", funcSelectReset);

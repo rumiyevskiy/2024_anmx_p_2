@@ -1913,7 +1913,7 @@ body {
 // *************************************************
 
 .footer {
-    border: 1px solid #008000;
+    // border: 1px solid #008000;
 
     .footer__body {
         display: flex;
@@ -1928,7 +1928,7 @@ body {
         }
 
         .footer-Section__logo {
-            border: 1px solid #808080;
+            // border: 1px solid #808080;
             
 
             .footer__logo-box {
@@ -2005,6 +2005,7 @@ body {
 
         .footer__contacts {
             text-align: center;
+            
 
             .accent-color {
                 color: rgb(178, 164, 89);
@@ -2016,11 +2017,58 @@ body {
 
             div {
                 margin: 5px 0;
+
+                &.contacts__phone,
+                &.contacts__mail {
+                    @include adaptiv-font(20, 18)
+                }
             }
 
         }
 
         .footer__info {
+            display: flex;
+
+            flex: 0 0 30%;
+
+            .info__list {
+
+                display: flex;
+                width: 100%;
+
+                ul {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    
+
+                    @media (max-width: 768px) {
+                        flex-direction: column;            
+                    }
+                }
+
+                .info__list-item {
+                    display: block;
+                    padding: 10px;
+                    margin: 5px;
+            
+                    color: var(--headerMenuItemTxtClr);
+                    @include adaptiv-font(16, 16);
+            
+                    text-align: center;
+    
+                    border: 1px solid #808080;
+                    border-radius: 10px;
+                }
+
+            }
+
+            
+        }
+
+        @media (max-width: 768px) {
+            flex-direction: column;            
         }
     }
 
