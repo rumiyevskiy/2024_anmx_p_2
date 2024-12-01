@@ -1316,7 +1316,7 @@ body.__lock {
   padding: 10px;
   margin: 5px;
   color: var(--headerMenuItemTxtClr);
-  font-size: calc(16px + 0 * (100vw - 320px) / 1120);
+  font-size: calc(17px + -1 * (100vw - 320px) / 1120);
   text-align: center;
   border: 1px solid #808080;
   border-radius: 10px;
