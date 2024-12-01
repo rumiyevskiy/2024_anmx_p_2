@@ -1599,13 +1599,16 @@ body.__lock {
   gap: 12px;
   align-items: flex-start;
   justify-content: center;
-  color: #BBBBBB;
+  color: #877575;
   font-size: 16px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.32px;
   width: 100%;
   margin: 10px 0;
+}
+#popup3 .popup__form .full-form .popup__content-page-3 .input__box .input option {
+  color: #877575;
 }
 #popup3 .popup__form .full-form .popup__content-page-3 .input__box .input:focus {
   border: 1px solid #000000;

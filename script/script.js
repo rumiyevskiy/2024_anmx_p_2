@@ -608,8 +608,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = mainFormOrder.email.value;
     const request = hiddenInputNum.value;    
     const select_type = hiddenInputСomposition.value;
+    const select_size = mainFormOrder.select_size.value;
+    const select_decor = mainFormOrder.select_decor.value;
     const privacy = mainFormOrder.privacy.checked ? 'Так' : 'Ні';
-      sendTelegram(name, phone, email, request, select_type, privacy); // Викликаємо функцію для відправки в Telegram
+      sendTelegram(name, phone, email, request, select_type, select_size, select_decor, privacy); // Викликаємо функцію для відправки в Telegram
   });
 
   mainForm.addEventListener('submit', (event) => {
@@ -621,7 +623,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Функція для відправки повідомлення в Telegram
-  async function sendTelegram(name, phone, email, request, select_type, privacy) {
+  async function sendTelegram(name, phone, email, request, select_type, select_size, select_decor, privacy) {
         
 
     // let optionValueTypeServices = document.querySelector("#select_services");
@@ -657,7 +659,8 @@ document.addEventListener("DOMContentLoaded", function () {
             Пошта: ${email}
             Літери: ${request||""}
             Наповнювачи: ${select_type||""}
-
+            Варіант цифр: ${select_size||""}
+            Святкове оформлення: ${select_decor||""}
             Згода на обробку даних: ${privacy||"так"}
         `;
 
