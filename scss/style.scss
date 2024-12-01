@@ -2269,6 +2269,7 @@ body {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
+                
               }
               
               .custom-select .option {
@@ -2329,6 +2330,13 @@ body {
             .popup__content-page-1 {
 
                   .custom-select .option {
+                    width: 25%;
+
+                    .option__img {
+                        // background-size: 150%;
+                        // background-repeat: no-repeat;
+                        // background-position: 11% 24%;
+                    }
                     
                     &.num-1 .option__img{
                         background-image: url("../img/numbers/dizayn_bez_nazvaniya_1.jpg");
@@ -2359,6 +2367,11 @@ body {
                     }
                     &.num-dbl .option__img{
                         background-image: url("../img/numbers/dizayn_bez_nazvaniya_10.jpg");
+                    }
+
+                    @media ((max-width: 767px)) {
+                        width: 31%;
+                        margin-bottom: 10px;
                     }
                   }
             }
@@ -2421,6 +2434,33 @@ body {
                     }
                     &.compos-16 .option__img{
                         background-image: url("../img/composition/16.png");
+                    }
+                    &.compos-17 .option__img{
+                        background-image: url("../img/composition/17.png");
+                    }
+                    &.compos-18 .option__img{
+                        background-image: url("../img/composition/18.png");
+                    }
+                    &.compos-19 .option__img{
+                        background-image: url("../img/composition/19.png");
+                    }
+                    &.compos-20 .option__img{
+                        background-image: url("../img/composition/20.png");
+                    }
+                    &.compos-21 .option__img{
+                        background-image: url("../img/composition/21.png");
+                    }
+                    &.compos-22 .option__img{
+                        background-image: url("../img/composition/22.png");
+                    }
+                    &.compos-23 .option__img{
+                        background-image: url("../img/composition/23.png");
+                    }
+                    &.compos-24 .option__img{
+                        background-image: url("../img/composition/24.png");
+                    }
+                    &.compos-25 .option__img{
+                        background-image: url("../img/composition/25.jpg");
                     }
 
                     @media ((max-width: 767px)) {
