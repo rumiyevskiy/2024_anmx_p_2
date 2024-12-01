@@ -692,7 +692,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // sendEmail(name, phone, email, request, select_type, select_services, privacy);
 
                 // Автоматичне надсилання повідомлення на пошту, повідомлення не бачно
-                sendEmail2(name, phone, email, request, select_type, privacy);
+                sendEmail2(name, phone, email, request, select_type, select_size, select_decor, privacy);
 
             } else {
 
@@ -713,7 +713,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
   }
   
-  function sendEmail2(name, phone, email, request, select_type, privacy) {
+  function sendEmail2(name, phone, email, request, select_type, select_size, select_decor, privacy) {
 
     // сайт: https://dashboard.emailjs.com/admin/account
     // це Public Key з розділу account/general:API keys
@@ -759,7 +759,7 @@ document.addEventListener("DOMContentLoaded", function () {
         email: email,
         comments: request||"",
         carType: select_type||"",
-        // service: select_services,
+        service: `Літери: ${request||""} Наповнювачи: ${select_type||""} Варіант цифр: ${select_size||""} Святкове оформлення: ${select_decor||""}`,
         privacy: privacy||"Так",
     };
 
