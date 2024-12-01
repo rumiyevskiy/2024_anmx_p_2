@@ -960,8 +960,8 @@ body {
                     letter-spacing: 0.32px;
                     // word-wrap: break-word
     
-                    width: 90%;
-                    margin: 10px;
+                    width: 100%;
+                    margin: 10px 0;
     
                     &:focus {
                         border: 1px solid #000000;
@@ -1921,6 +1921,7 @@ body {
         flex-wrap: wrap;
         align-items: center;
         align-self: center;
+        padding: 10px;
 
         .footer-body__section {
 
@@ -2065,6 +2066,25 @@ body {
             }
 
             
+        }
+
+        .footer__owner {
+            flex: 0 0 100%;
+
+            border-top: 1px solid #cccccc;
+            text-align: center;
+
+            padding-top: 10px;
+
+            p {
+                padding-top: 10px;
+                
+            }
+
+            p:last-child {
+                text-transform: uppercase;
+            }
+
         }
 
         @media (max-width: 768px) {
@@ -2425,8 +2445,8 @@ body {
                         letter-spacing: 0.32px;
                         // word-wrap: break-word
     
-                        width: 90%;
-                        margin: 10px;
+                        width: 100%;
+                        margin: 10px 0;
 
                         &:focus {
                             border: 1px solid #000000;

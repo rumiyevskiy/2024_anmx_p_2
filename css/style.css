@@ -684,8 +684,8 @@ body.__lock {
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.32px;
-  width: 90%;
-  margin: 10px;
+  width: 100%;
+  margin: 10px 0;
 }
 .page__section-3 .popup__form .form__content-page-3 .input__box .input:focus {
   border: 1px solid #000000;
@@ -1228,6 +1228,7 @@ body.__lock {
   flex-wrap: wrap;
   align-items: center;
   align-self: center;
+  padding: 10px;
 }
 .footer .footer__body .footer-Section__logo .footer__logo-box {
   display: flex;
@@ -1320,6 +1321,18 @@ body.__lock {
   text-align: center;
   border: 1px solid #808080;
   border-radius: 10px;
+}
+.footer .footer__body .footer__owner {
+  flex: 0 0 100%;
+  border-top: 1px solid #cccccc;
+  text-align: center;
+  padding-top: 10px;
+}
+.footer .footer__body .footer__owner p {
+  padding-top: 10px;
+}
+.footer .footer__body .footer__owner p:last-child {
+  text-transform: uppercase;
 }
 @media (max-width: 768px) {
   .footer .footer__body {
@@ -1591,8 +1604,8 @@ body.__lock {
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.32px;
-  width: 90%;
-  margin: 10px;
+  width: 100%;
+  margin: 10px 0;
 }
 #popup3 .popup__form .full-form .popup__content-page-3 .input__box .input:focus {
   border: 1px solid #000000;
