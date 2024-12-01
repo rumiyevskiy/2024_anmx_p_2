@@ -999,6 +999,21 @@ body.__lock {
   margin: 20px 0;
   font-weight: 700;
 }
+.page__section-4 .page__section-4-swiper .slider-main-block__slide .item__12 .section-4__title {
+  color: #ff0000;
+  font-size: calc(20px + 1 * (100vw - 320px) / 1120);
+  margin: 10px 0;
+}
+.page__section-4 .page__section-4-swiper .slider-main-block__slide .item__12 .section-4__text-body {
+  font-size: calc(18px + 2 * (100vw - 320px) / 1120);
+}
+.page__section-4 .page__section-4-swiper .slider-main-block__slide .item__12 .section-4__text-body .text-body-title {
+  text-align: center;
+}
+.page__section-4 .page__section-4-swiper .slider-main-block__slide .item__12 .section-4__text-body .text-body-text {
+  margin: 20px 0;
+  font-weight: 700;
+}
 .page__section-4 .page__section-4-swiper .slider-main-block__slide img {
   width: 100%;
   max-height: 250px;
@@ -1289,7 +1304,7 @@ body.__lock {
   font-size: calc(20px + 2 * (100vw - 320px) / 1120);
 }
 .footer .footer__body .footer__contacts div {
-  margin: 5px 0;
+  margin: 10px 0;
 }
 .footer .footer__body .footer__contacts div.contacts__phone, .footer .footer__body .footer__contacts div.contacts__mail {
   font-size: calc(18px + 2 * (100vw - 320px) / 1120);

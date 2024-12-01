@@ -636,8 +636,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const botToken = '7648355172:AAE4jsw4ZfadhgoEezXJyy0X7U4EQwFkkbQ'; // Токен МІЙ бота
     const chatId = '-4588952109'; // ID чату
-    // const botToken = '7648355172:AAE4jsw4ZfadhgoEezXJyy0X7U4EQwFkkbQ'; // Токен бота
-    // const chatId = '-4588952109'; // ID чату
+    // const botToken = '1605870485:AAHL-Z9gtDNJxzN3hggY_cd3yUeUfQ072yE'; // Токен бота
+    // const chatId = '-551933957'; // ID чату
     
         // const name = name;
         // const phone = phone;
@@ -717,43 +717,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // сайт: https://dashboard.emailjs.com/admin/account
     // це Public Key з розділу account/general:API keys
-    let emailjsID = "_ruQbUC348SMI_KYA";
+    let emailjsID = "_ruQbUC348SMI_KYA"; // МІЙ-ID
+    // let emailjsID = "_ruQbUC348SMI_KYA";
 
     // ініціалізація сервісу за допомогою Public Key (або ще його називають user_id)
     emailjs.init(emailjsID);
 
-    // тут я отриммав переклад деяких значень для формування об'єкту данних для відправки на пошту:
-    // знаходжу елемент select з id у формі
-    // let optionValueTypeServices = document.querySelector("#select_services");
-
-    // тут в елементі select отримаємо вибраний користувачем option за допомогою індекса вибраного (selectedIndex) , тобто ми взяли елемент select зі змінної optionValueTypeServices та за допомогою метода options звернулись до масиву усіх options, а в [] дужках за допомогою метода selectedIndex отримали цифру яка дорівнює індексу обраного елементу option
-    // const selectedOption = optionValueTypeServices.options[optionValueTypeServices.selectedIndex];
-
-    // тут ми отримаємо значення з атрибуту перекладу data-translate який є у елемента option отриманого вишче, це потрібно для формування перекладів в проекті
-    // const dataTranslate = selectedOption.getAttribute('data-translate');
-
-    // тут ми звертаємось до отриманого раніше об'єкту перекладів optionValueTypeServicesArr і з ньго отримаємо значення перекладу за ключем, отриманим за крок до цього: dataTranslate
-    // let optionValueTypeServicesUkr = optionValueTypeServicesArr[dataTranslate]; 
-
-    // тут ми отримаємо в змінні значення з елементів форми mainForm
-    // const name = mainForm.name.value;
-    // const phone = mainForm.phone.value;
-    // const email = mainForm.email.value;
-    // const request = mainForm.request.value;
-    // const select_type = mainForm.select_type.value;
-    // const select_services = optionValueTypeServicesUkr;
-    // const privacy = mainForm.privacy.checked ? 'Так' : 'Ні';
-
-    // const name = mainForm.name.value;
-    //     const phone = mainForm.phone.value;
-    //     const email = mainForm.email.value;
-    //     const request = hiddenInputNum.value;    
-    //     const select_type = hiddenInputСomposition.value;
-    //     const privacy = mainForm.privacy.checked ? 'Так' : 'Ні';
-
     // Параметри для Email.js, тут ми формуємо об'єкт, який надішлемо до пошти, вказаної при реєстрації на сервісі emailjs. тут головне: щоб назви ключей відповідали змінним у подвійних дужках {{}} в темплейті(шаблоні) в сервісі emailjs
     const templateParams = {
-        // to_email: 'rumiyevskiy@gmail.com',
         name: `${name} from site "Annamax" `,
         phone: phone,
         email: email,
@@ -764,9 +735,12 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // сюда SERVICE_ID записується Service ID з вкладки Edit Service який ми отримали при додаванні сервіса, яким будемо користуватися при надсиланнях повідомлень в emailjs. я використовував gmail
-    let SERVICE_ID = 'service_oeydswb';
+    let SERVICE_ID = 'service_oeydswb'; // МІЙ-ID
+    // let SERVICE_ID = 'service_oeydswb';
+
     // сюда TEMPLATE_ID записується Template ID з вкладки Email Templates, далі обираємо потрібний створений нами template (в безкоштовному варіанті їх тільки два), далі обираємо settings, там знаходимо Template ID
-    let TEMPLATE_ID = 'template_2pd9prh';
+    let TEMPLATE_ID = 'template_2pd9prh'; // МІЙ-ID
+    // let TEMPLATE_ID = 'template_2pd9prh';
 
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
         .then((response) => {
