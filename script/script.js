@@ -634,10 +634,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // let optionValueTypeServicesUkr = optionValueTypeServicesArr[dataTranslate];
 
-    const botToken = '7648355172:AAE4jsw4ZfadhgoEezXJyy0X7U4EQwFkkbQ'; // Токен МІЙ бота
-    const chatId = '-4588952109'; // ID чату
-    // const botToken = '1605870485:AAHL-Z9gtDNJxzN3hggY_cd3yUeUfQ072yE'; // Токен бота
-    // const chatId = '-551933957'; // ID чату
+    // const botToken = '7648355172:AAE4jsw4ZfadhgoEezXJyy0X7U4EQwFkkbQ'; // Токен МІЙ бота
+    // const chatId = '-4588952109'; // ID чату
+    const botToken = '1605870485:AAHL-Z9gtDNJxzN3hggY_cd3yUeUfQ072yE'; // Токен бота
+    const chatId = '-551933957'; // ID чату
     
         // const name = name;
         // const phone = phone;
@@ -653,7 +653,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // const privacy = mainFormOrder.privacy.checked ? 'Так' : 'Ні';
 
         const bodymessage = `
-            Запит з сайту Annamax
+            Запит з сайту Annamax (Набір солодощів)
             Ім'я: ${name}
             Телефон: ${phone}
             Пошта: ${email}
@@ -717,30 +717,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // сайт: https://dashboard.emailjs.com/admin/account
     // це Public Key з розділу account/general:API keys
-    let emailjsID = "_ruQbUC348SMI_KYA"; // МІЙ-ID
-    // let emailjsID = "_ruQbUC348SMI_KYA";
+    // let emailjsID = "_ruQbUC348SMI_KYA"; // МІЙ-ID
+    let emailjsID = "mq5LVCRL1uA0epLXa";
 
     // ініціалізація сервісу за допомогою Public Key (або ще його називають user_id)
     emailjs.init(emailjsID);
 
     // Параметри для Email.js, тут ми формуємо об'єкт, який надішлемо до пошти, вказаної при реєстрації на сервісі emailjs. тут головне: щоб назви ключей відповідали змінним у подвійних дужках {{}} в темплейті(шаблоні) в сервісі emailjs
     const templateParams = {
-        name: `${name} from site "Annamax" `,
-        phone: phone,
-        email: email,
-        comments: request||"",
-        carType: select_type||"",
-        service: `Літери: ${request||""} Наповнювачи: ${select_type||""} Варіант цифр: ${select_size||""} Святкове оформлення: ${select_decor||""}`,
-        privacy: privacy||"Так",
+      from_name: 'site Annamax (Набір солодощів)',
+      message: `Ім'я: ${name || ""} 
+                Телефон: ${phone || ""}
+                Е-mail: ${email || ""}
+                Літери: ${request || ""}
+                Наповнювачи: ${select_type || ""} 
+                Варіант цифр: ${select_size || ""} 
+                Святкове оформлення: ${select_decor || ""}`,
     };
+    // const templateParams = {
+    //     name: `${name} from site "Annamax" `,
+    //     phone: phone,
+    //     email: email,
+    //     comments: request||"",
+    //     carType: select_type||"",
+    //     service: `Літери: ${request||""} Наповнювачи: ${select_type||""} Варіант цифр: ${select_size||""} Святкове оформлення: ${select_decor||""}`,
+    //     privacy: privacy||"Так",
+    // };
 
     // сюда SERVICE_ID записується Service ID з вкладки Edit Service який ми отримали при додаванні сервіса, яким будемо користуватися при надсиланнях повідомлень в emailjs. я використовував gmail
-    let SERVICE_ID = 'service_oeydswb'; // МІЙ-ID
-    // let SERVICE_ID = 'service_oeydswb';
+    // let SERVICE_ID = 'service_oeydswb'; // МІЙ-ID
+    let SERVICE_ID = 'service_pq3pnlx';
 
     // сюда TEMPLATE_ID записується Template ID з вкладки Email Templates, далі обираємо потрібний створений нами template (в безкоштовному варіанті їх тільки два), далі обираємо settings, там знаходимо Template ID
-    let TEMPLATE_ID = 'template_2pd9prh'; // МІЙ-ID
-    // let TEMPLATE_ID = 'template_2pd9prh';
+    // let TEMPLATE_ID = 'template_53b9ea6'; // МІЙ-ID
+    let TEMPLATE_ID = 'template_4zhd3xj';
 
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
         .then((response) => {
