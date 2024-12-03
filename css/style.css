@@ -1079,10 +1079,12 @@ body.__lock {
   border-bottom: 1px solid #808080;
 }
 .page__section-5 .section__body .section-5__body-item.__2 {
+  flex: 0 0 50%;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   padding: 0 20px 20px 20px;
+  align-items: center;
   border-bottom: 1px solid #808080;
 }
 .page__section-5 .section__body .section-5__body-item.__2 .section__body-title {
