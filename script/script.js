@@ -1,4 +1,3 @@
-// "use strict";
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -51,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.classList.add('__pc');
   }
     
-
+// *********************************************************************
 // кнопка вгору
 
   const returnBtn = document.querySelector('.return__btn');
@@ -72,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
       })
   });
 
+  // *********************************************************************
   // меню бургер
 
   const burgerIcon = document.querySelector('.burger');
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
 
-
+  // *********************************************************************
   // перекидання при натисканні
 
   const menuLinks = document.querySelectorAll('[data-goto]');
