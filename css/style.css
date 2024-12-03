@@ -1444,6 +1444,18 @@ body.__lock {
 .footer .footer__body .footer__contacts .contacts__title {
   font-size: calc(20px + 2 * (100vw - 320px) / 1120);
 }
+.footer .footer__body .footer__contacts .socials {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.footer .footer__body .footer__contacts .footer-socials__ico {
+  width: 30px;
+}
+.footer .footer__body .footer__contacts .footer-socials__ico img {
+  max-height: 100%;
+}
 .footer .footer__body .footer__contacts div {
   margin: 10px 0;
 }
