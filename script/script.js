@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
           popupLink.addEventListener("click", function (e) {
               const popupName = popupLink.getAttribute('href').replace('#', '');
               const curentPopup = document.getElementById(popupName);
-              console.log("curentPopup: ", curentPopup);
+ 
               popupOpen(curentPopup);
               e.preventDefault();
           });
@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
                      
           popupClose(el.closest('.popup'));
 
-            // funcSelectReset();
+
 
               e.preventDefault();
         });
@@ -261,10 +261,10 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("videoPlayer").contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
 
       if (popupActive.querySelector('.full-form')) {
-        console.log('Елемент з класом .full-form знайдено у .popup, незалежно від рівня вкладеності');
+        
         funcSelectReset();
       } else {
-          console.log('Елемент з класом .full-form не знайдено у .popup');
+          
       }
 
         popupActive.classList.remove('open');
@@ -276,15 +276,7 @@ document.addEventListener("DOMContentLoaded", function () {
    };
   
   function bodyLock() {
-      // const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
-
-      // if (lockPadding.length > 0) {
-      //     for (let index = 0; index < lockPadding.length; index++) {
-      //         const el = lockPadding[index];
-      //         el.style.paddingRight = lockPaddingValue;
-      //     }
-      // }        
-      // body.style.paddingRight = lockPaddingValue;
+      
       body.classList.add('__lock');
 
       unlock = false;
@@ -295,13 +287,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function bodyUnLock() {
       setTimeout(function () {
-          // if (lockPadding.length > 0) {
-          //     for (let index = 0; index < lockPadding.length; index++) {
-          //         const el = lockPadding[index];
-          //         el.style.paddingRight = '0px';
-          //     }
-          // }            
-          // body.style.paddingRight = '0px';
+          
           body.classList.remove('__lock');
       }, timeout);
 
@@ -334,14 +320,9 @@ document.addEventListener("DOMContentLoaded", function () {
       breakpoints: {
         640: {
           slidesPerView: 3,
-          // spaceBetween: 10
+
         }
       },
-
-      // pagination: {
-      //   el: ".swiper-pagination",
-      //   clickable: true,
-      // },
       
         // Navigation arrows
       navigation: {
@@ -368,15 +349,10 @@ document.addEventListener("DOMContentLoaded", function () {
       breakpoints: {
         640: {
           slidesPerView: 3,
-          // spaceBetween: 10
+
         }
       },
-
-      // pagination: {
-      //   el: ".swiper-pagination",
-      //   clickable: true,
-      // },
-      
+     
         // Navigation arrows
       navigation: {
         nextEl: '.slider-main-block2__arrow.swiper-button-next',
@@ -402,14 +378,11 @@ document.addEventListener("DOMContentLoaded", function () {
       breakpoints: {
         640: {
           slidesPerView: 3,
-          // spaceBetween: 10
+
         }
       },
 
-      // pagination: {
-      //   el: ".swiper-pagination",
-      //   clickable: true,
-      // },
+
       
         // Navigation arrows
       navigation: {
@@ -428,12 +401,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.page__hero,.page__about .slide-image').forEach(image => {
       image.addEventListener('click', (event) => {
         let imagePath = event.target.src; 
-        console.log(imagePath);
+
           let rezult = new URL(imagePath).pathname;
           let repoName = '/2024_anmx_p_2';
           if (rezult.startsWith(repoName)) {
               rezult = rezult.replace(repoName, '');
-              console.log('replaced');
+
           }             
           const relativePath = rezult.slice(1);
           const imgElement = document.querySelector("#popup1 .popup-img__item");
@@ -476,8 +449,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const value = option.getAttribute("data-value");
       hiddenInputNum.value = value;
 
-      console.log("selectValue: ", hiddenInputNum.value);
-
       optionsNum.forEach((opt) => opt.classList.remove("selected"));
       option.classList.add("selected");
     });
@@ -501,7 +472,6 @@ document.addEventListener("DOMContentLoaded", function () {
     page_1.classList.add("pagehidden");
     page_2.classList.remove("pagehidden");
      event.preventDefault();
-    // return;
 
   });
 
@@ -530,14 +500,12 @@ document.addEventListener("DOMContentLoaded", function () {
     optionsСomposition.forEach((opt) => opt.classList.remove("selected"));
     selectedValues.clear();
     hiddenInputСomposition.value = "";
-    console.log("selectValueCompose: ", hiddenInputСomposition.value);
   });
 
   btnNextPage2.addEventListener("click", (event) => {
 
     const selectedOpts = document.querySelectorAll(".popup__content-page-2 .custom-select.__2 .selected");
-    console.log("page1: ", hiddenInputNum.value);
-    console.log("page2: ", hiddenInputСomposition.value);
+
 
     if (!selectedOpts.length) {
       alert("Ці поля повині бути заповнені");
@@ -565,17 +533,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const funcSelectReset = (event) => {
 
     const mainFormOrder = document.querySelector('.popup3 .full-form');
-    // mainFormOrder.reset();
+
     selectedValues.clear();
     const inputs = mainFormOrder.querySelectorAll('input');
     inputs.forEach(input => input.value = '');
     const optionsForReset = document.querySelectorAll(".popup3 .full-form .option.selected");
-    console.log("selectedValues: ", selectedValues);
-    console.log("optionsForReset: ", optionsForReset);
+
     optionsForReset.forEach(opt => {
       opt.classList.remove("selected");
     });
-    console.log("mainFormOrder reseted");
 
     alert("Всі данні в формі видалені! ");
 
@@ -594,13 +560,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Логіка обробки форми
   mainFormOrder.addEventListener('submit', (event) => {
+
     event.preventDefault(); // Зупиняємо стандартну поведінку форми
+
     if (!mainFormOrder.privacy.checked) {
       const privacy = document.querySelector(".privacy-policy");
       privacy.classList.add("error");
       alert("Заповніть всі поля!")
       return;
     }
+
     const privacyElem = document.querySelector(".privacy-policy");
     privacyElem.classList.remove("error");
     const name = mainFormOrder.name.value;
@@ -611,46 +580,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const select_size = mainFormOrder.select_size.value;
     const select_decor = mainFormOrder.select_decor.value;
     const privacy = mainFormOrder.privacy.checked ? 'Так' : 'Ні';
+
       sendTelegram(name, phone, email, request, select_type, select_size, select_decor, privacy); // Викликаємо функцію для відправки в Telegram
   });
 
   mainForm.addEventListener('submit', (event) => {
+
     event.preventDefault(); // Зупиняємо стандартну поведінку форми
+
     const name = mainForm.name.value;
     const phone = mainForm.phone.value;
     const email = mainForm.email.value;
+
     sendTelegram(name, phone, email); // Викликаємо функцію для відправки в Telegram
   });
 
   // Функція для відправки повідомлення в Telegram
   async function sendTelegram(name, phone, email, request, select_type, select_size, select_decor, privacy) {
-        
-
-    // let optionValueTypeServices = document.querySelector("#select_services");
-
-    // const selectedOption = optionValueTypeServices.options[optionValueTypeServices.selectedIndex];
-
-    // const dataTranslate = selectedOption.getAttribute('data-translate');
-
-    // let optionValueTypeServicesUkr = optionValueTypeServicesArr[dataTranslate];
 
     // const botToken = '7648355172:AAE4jsw4ZfadhgoEezXJyy0X7U4EQwFkkbQ'; // Токен МІЙ бота
     // const chatId = '-4588952109'; // ID чату
     const botToken = '1605870485:AAHL-Z9gtDNJxzN3hggY_cd3yUeUfQ072yE'; // Токен бота
     const chatId = '-551933957'; // ID чату
-    
-        // const name = name;
-        // const phone = phone;
-        // const email = email;
-        // const request = request;    
-        // const select_type = select_type;
-        // const privacy = privacy;
-        // const name = mainForm.name.value;
-        // const phone = mainForm.phone.value;
-        // const email = mainForm.email.value;
-        // const request = hiddenInputNum.value;    
-        // const select_type = hiddenInputСomposition.value;
-        // const privacy = mainFormOrder.privacy.checked ? 'Так' : 'Ні';
 
         const bodymessage = `
             Запит з сайту Annamax (Набір солодощів)
@@ -678,37 +629,24 @@ document.addEventListener("DOMContentLoaded", function () {
             const data = await response.json();
             if (data.ok) {
 
-                // let msgTelegramGoodVar = translations[teleramsent];
-
-                // console.log(msgTelegramGoodVar);
                 console.log('The message has been successfully sent!');
-                // alert(msgTelegramGoodVar);
+
                 alert('Thank you! Your message has been sent.');
-
-                // Автоматичне надсилання повідомлення на пошту за допомогою PHP(треба перевіряти), повідомлення не бачно
-                // sendEmailPHP();
-
-                // Відкриття додатку по замовчуванню для підтвердження та надсилання повідомлення на пошту
-                // sendEmail(name, phone, email, request, select_type, select_services, privacy);
 
                 // Автоматичне надсилання повідомлення на пошту, повідомлення не бачно
                 sendEmail2(name, phone, email, request, select_type, select_size, select_decor, privacy);
 
             } else {
 
-                // let msgTelegramErrVar = translations[errorTelegram];
-                
-                // console.error(msgTelegramErrVar, data);
                 console.error('Помилка Telegram:', data);
-                // alert(msgTelegramErrVar);
+
                 alert('An error occurred while sending the message');
             }
         } catch (error) {
 
-            // let msgReqErrVar = translations[reqErr];
-            // console.error(msgReqErrVar, error);
+
             console.error('Помилка запиту:', error);
-            // alert(msgReqErrVar);
+
             alert('An error occurred while sending the request.');
         }
   }
@@ -734,15 +672,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 Варіант цифр: ${select_size || ""} 
                 Святкове оформлення: ${select_decor || ""}`,
     };
-    // const templateParams = {
-    //     name: `${name} from site "Annamax" `,
-    //     phone: phone,
-    //     email: email,
-    //     comments: request||"",
-    //     carType: select_type||"",
-    //     service: `Літери: ${request||""} Наповнювачи: ${select_type||""} Варіант цифр: ${select_size||""} Святкове оформлення: ${select_decor||""}`,
-    //     privacy: privacy||"Так",
-    // };
+    
 
     // сюда SERVICE_ID записується Service ID з вкладки Edit Service який ми отримали при додаванні сервіса, яким будемо користуватися при надсиланнях повідомлень в emailjs. я використовував gmail
     // let SERVICE_ID = 'service_oeydswb'; // МІЙ-ID
@@ -755,19 +685,14 @@ document.addEventListener("DOMContentLoaded", function () {
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
         .then((response) => {
 
-            // let msgGoodVar = translations[Emailsent];
-            // console.log(msgGoodVar, response.status, response.text);
+
             console.log('Email успішно відправлено!', response.status, response.text);
 
-            // alert(msgGoodVar);
             alert('Ваше повідомлення успішно відправлено!');
         })
         .catch((error) => {
 
-            // let msgErrVar = translations[error];
-            // console.error(msgErrVar, error);
             console.error('Помилка відправки:', error);
-            // alert(msgErrVar);
             alert('Сталася помилка при відправці.');
         });
   }
@@ -822,76 +747,31 @@ document.addEventListener("DOMContentLoaded", function () {
   function findVideos() {
     let videos = document.querySelectorAll('.video__body-item');
 
-    console.log("videos: ", videos);
+
 
     for (let i = 0; i < videos.length; i++) {
         setupVideo(videos[i]);
     }
-}
+  }
 
-function setupVideo(video) {
-  let linkVideoHref = video.querySelector('.video__link').href;
-  console.log("linkVideo: ", linkVideoHref);
-    // let media = video.querySelector('.video__media');
+  function setupVideo(video) {
+    let linkVideoHref = video.querySelector('.video__link').href;
+
     let button = video.querySelector('.video__button');
-  // let id = parseMediaURL(media);
-  
-  
 
-
-  video.addEventListener('click', (event) => {
-    event.preventDefault();
+    video.addEventListener('click', (event) => {
+      event.preventDefault();
       let popupBody = document.getElementById("videoPlayer");
-    console.log("popupBody: ", popupBody);
-    let iframeSrcValue = linkVideoHref + '?enablejsapi=1';
-    popupBody.setAttribute('src', iframeSrcValue);
-    let  videoPopup = document.getElementById("popup2");
+
+      let iframeSrcValue = linkVideoHref + '?enablejsapi=1';
+      popupBody.setAttribute('src', iframeSrcValue);
+      let  videoPopup = document.getElementById("popup2");
                popupOpen(videoPopup);
-        // let iframe = createIframe(id);
 
-        // link.remove();
-        // button.remove();
-        // video.appendChild(iframe);
-    });
-
-    // link.removeAttribute('href');
-    // video.classList.add('video--enabled');
-}
-
-// function parseMediaURL(media) {
-//     let regexp = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i;
-//     let url = media.src;
-//     let match = url.match(regexp);
-
-//     return match[1];
-// }
-
-// function createIframe(id) {
-//     let iframe = document.createElement('iframe');
-
-//     iframe.setAttribute('allowfullscreen', '');
-//     iframe.setAttribute('allow', 'autoplay');
-//     iframe.setAttribute('src', generateURL(id));
-//     iframe.classList.add('video__media');
-
-//     return iframe;
-// }
-
-// function generateURL(id) {
-//     let query = '?rel=0&showinfo=0&autoplay=1';
-
-//     return 'https://www.youtube.com/embed/' + id + query;
-// }
+    });    
+  }
 
   findVideos();
-
-
-  // *******************************************************
-
-
-
-
-  // *******************************************************
 
 
 
