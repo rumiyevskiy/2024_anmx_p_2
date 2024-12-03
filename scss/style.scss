@@ -1766,7 +1766,7 @@ body {
                 .section__body-img {
                     flex: 1 1 20%;
 
-                    @media (max-width: 768px) {
+                    @media (max-width: 1024px) {
                         // height: 200px;
                         flex: 1 1 auto;
                     }                    
@@ -1812,10 +1812,14 @@ body {
                     }
                 }
 
+                @media (max-width: 1024px) {
+                    flex-direction: column;
+                }
+
                 @media (max-width: 768px) {
                     flex: 1 1 100%;
                     border-top: 1px solid #808080;
-                    flex-direction: column;
+                    // flex-direction: column;
                 }
             }
 

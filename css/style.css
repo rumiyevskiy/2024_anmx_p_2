@@ -1093,7 +1093,7 @@ body.__lock {
 .page__section-5 .section__body .section-5__body-item.__2 .section__body-img {
   flex: 1 1 20%;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .page__section-5 .section__body .section-5__body-item.__2 .section__body-img {
     flex: 1 1 auto;
   }
@@ -1131,11 +1131,15 @@ body.__lock {
 .page__section-5 .section__body .section-5__body-item.__2 .section__body-text .imgs-block .imgs-block__item .item-text {
   font-size: calc(16px + 0 * (100vw - 320px) / 1120);
 }
+@media (max-width: 1024px) {
+  .page__section-5 .section__body .section-5__body-item.__2 {
+    flex-direction: column;
+  }
+}
 @media (max-width: 768px) {
   .page__section-5 .section__body .section-5__body-item.__2 {
     flex: 1 1 100%;
     border-top: 1px solid #808080;
-    flex-direction: column;
   }
 }
 .page__section-5 .section__body .section-5__body-item.__3 {
