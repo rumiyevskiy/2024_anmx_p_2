@@ -1093,6 +1093,9 @@ body.__lock {
 .page__section-5 .section__body .section-5__body-item.__2 .section__body-img {
   flex: 1 1 20%;
 }
+.page__section-5 .section__body .section-5__body-item.__2 .section__body-img img {
+  border-radius: 10px;
+}
 @media (max-width: 1024px) {
   .page__section-5 .section__body .section-5__body-item.__2 .section__body-img {
     flex: 1 1 auto;
