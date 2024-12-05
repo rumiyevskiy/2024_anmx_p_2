@@ -1677,9 +1677,19 @@ body {
                     margin: 5px 0;
 
                     .infinity {
-                        display: inline-block;
-                        transform: rotate(-90deg);
-                        transition: transform 0.8s ease 0s;
+                        width: 80px;
+                        height: 80px;
+                        // display: inline-block;
+                        // transform: rotate(-90deg);
+                        // transition: transform 0.8s ease 0s;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                            // object-fit: cover;
+                            transform: scale(1.5);
+                        }
                     }
                     
                 }
@@ -1693,10 +1703,14 @@ body {
         
             span {
                 // display:block;
-                width: 15rem;
-                height: 6rem;
-                font-size: 5rem;
+                // width: 15rem;
+                // height: 6rem;
+                @include adaptiv-font(70, 60);
+                // font-size: 5rem;
                 text-align:center;
+                // font-weight: lighter;
+                font-family: 'Times New Roman', Times, serif;
+
             }
             
             h2 {
@@ -2641,34 +2655,34 @@ body {
                     }
                     
                     &.num-1 .option__img{
-                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_1.jpg");
+                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_1.webp");
                     }
                     &.num-2 .option__img{
-                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_2.jpg");
+                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_2.webp");
                     }
                     &.num-3 .option__img{
-                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_3.jpg");
+                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_3.webp");
                     }
                     &.num-4 .option__img{
-                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_4.jpg");
+                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_4.webp");
                     }
                     &.num-5 .option__img{
-                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_5.jpg");
+                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_5.webp");
                     }
                     &.num-6 .option__img{
-                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_6.jpg");
+                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_6.webp");
                     }
                     &.num-7 .option__img{
-                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_7.jpg");
+                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_7.webp");
                     }
                     &.num-8 .option__img{
-                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_8.jpg");
+                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_8.webp");
                     }
                     &.num-9 .option__img{
-                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_9.jpg");
+                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_9.webp");
                     }
                     &.num-dbl .option__img{
-                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_10.jpg");
+                        background-image: url("../img/numbers/dizayn_bez_nazvaniya_10.webp");
                     }
 
                     @media ((max-width: 767px)) {
@@ -2690,79 +2704,79 @@ body {
                     }
                     
                     &.compos-1 .option__img{
-                        background-image: url("../img/composition/1.png");
+                        background-image: url("../img/composition/1.webp");
                     }
                     &.compos-2 .option__img{
-                        background-image: url("../img/composition/2.png");
+                        background-image: url("../img/composition/2.webp");
                     }
                     &.compos-3 .option__img{
-                        background-image: url("../img/composition/3.png");
+                        background-image: url("../img/composition/3.webp");
                     }
                     &.compos-4 .option__img{
-                        background-image: url("../img/composition/4.png");
+                        background-image: url("../img/composition/4.webp");
                     }
                     &.compos-5 .option__img{
-                        background-image: url("../img/composition/5.png");
+                        background-image: url("../img/composition/5.webp");
                     }
                     &.compos-6 .option__img{
-                        background-image: url("../img/composition/6.png");
+                        background-image: url("../img/composition/6.webp");
                     }
                     &.compos-7 .option__img{
-                        background-image: url("../img/composition/7.png");
+                        background-image: url("../img/composition/7.webp");
                     }
                     &.compos-8 .option__img{
-                        background-image: url("../img/composition/8.png");
+                        background-image: url("../img/composition/8.webp");
                     }
                     &.compos-9 .option__img{
-                        background-image: url("../img/composition/9.png");
+                        background-image: url("../img/composition/9.webp");
                     }
                     &.compos-10 .option__img{
-                        background-image: url("../img/composition/10.png");
+                        background-image: url("../img/composition/10.webp");
                     }
                     &.compos-11 .option__img{
-                        background-image: url("../img/composition/11.png");
+                        background-image: url("../img/composition/11.webp");
                     }
                     &.compos-12 .option__img{
-                        background-image: url("../img/composition/12.png");
+                        background-image: url("../img/composition/12.webp");
                     }
                     &.compos-13 .option__img{
-                        background-image: url("../img/composition/13.png");
+                        background-image: url("../img/composition/13.webp");
                     }
                     &.compos-14 .option__img{
-                        background-image: url("../img/composition/14.png");
+                        background-image: url("../img/composition/14.webp");
                     }
                     &.compos-15 .option__img{
-                        background-image: url("../img/composition/15.png");
+                        background-image: url("../img/composition/15.webp");
                     }
                     &.compos-16 .option__img{
-                        background-image: url("../img/composition/16.png");
+                        background-image: url("../img/composition/16.webp");
                     }
                     &.compos-17 .option__img{
-                        background-image: url("../img/composition/17.png");
+                        background-image: url("../img/composition/17.webp");
                     }
                     &.compos-18 .option__img{
-                        background-image: url("../img/composition/18.png");
+                        background-image: url("../img/composition/18.webp");
                     }
                     &.compos-19 .option__img{
-                        background-image: url("../img/composition/19.png");
+                        background-image: url("../img/composition/19.webp");
                     }
                     &.compos-20 .option__img{
-                        background-image: url("../img/composition/20.png");
+                        background-image: url("../img/composition/20.webp");
                     }
                     &.compos-21 .option__img{
-                        background-image: url("../img/composition/21.png");
+                        background-image: url("../img/composition/21.webp");
                     }
                     &.compos-22 .option__img{
-                        background-image: url("../img/composition/22.png");
+                        background-image: url("../img/composition/22.webp");
                     }
                     &.compos-23 .option__img{
-                        background-image: url("../img/composition/23.png");
+                        background-image: url("../img/composition/23.webp");
                     }
                     &.compos-24 .option__img{
-                        background-image: url("../img/composition/24.png");
+                        background-image: url("../img/composition/24.webp");
                     }
                     &.compos-25 .option__img{
-                        background-image: url("../img/composition/25.jpg");
+                        background-image: url("../img/composition/25.webp");
                     }
 
                     @media ((max-width: 767px)) {
