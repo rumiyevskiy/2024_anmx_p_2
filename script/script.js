@@ -589,7 +589,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const select_decor = mainFormOrder.select_decor.value;
     const privacy = mainFormOrder.privacy.checked ? 'Так' : 'Ні';
 
-      sendTelegram(name, phone, email, request, select_type, select_size, select_decor, privacy); // Викликаємо функцію для відправки в Telegram
+    sendTelegram(name, phone, email, request, select_type, select_size, select_decor, privacy); // Викликаємо функцію для відправки в Telegram
+    
+    sendPostRequest(apiVersion, pixelId, token, eventData);
   });
 
   mainForm.addEventListener('submit', (event) => {
@@ -607,7 +609,7 @@ document.addEventListener("DOMContentLoaded", function () {
   async function sendTelegram(name, phone, email, request, select_type, select_size, select_decor, privacy) {
 
     // const botToken = '7648355172:AAE4jsw4ZfadhgoEezXJyy0X7U4EQwFkkbQ'; // Токен МІЙ бота
-    // const chatId = '-4588952109'; // ID чату
+    // const chatId = '-4588952109'; // ID МІЙ чату
     const botToken = '1605870485:AAHL-Z9gtDNJxzN3hggY_cd3yUeUfQ072yE'; // Токен бота
     const chatId = '-551933957'; // ID чату
 
@@ -868,27 +870,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const token = "EAAHTZBUO2nWIBO3DCJmUqiR3BNDNJmRWyEtpF3gLMZCofyGyrReSAOS4RDZCgTi0mlZCNNkk62OR8XQjQthZAwItJKZBDy1J3M2Vm0i00GslwlNKTSiBJwZCCnmziuomxZBBViCiKNxtEZB1RfA3wRmnX9TZAev3sZCZAAd93dTFEj7DEm4iCVmFjQWg6nEPEHvSsLqoxwZDZD";
     const eventData = [
       {
-        event_name: "Purchase",
-        event_time: 1733475135,
-        action_source: "website",
-        user_data: {
-          em: [
-            "7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068"
-          ],
-          ph: [null],
-        },
-        custom_data: {
-          currency: "USD",
-          value: "142.52",
-        },
-        original_event_data: {
-          event_name: "Purchase",
-          event_time: 1733475135,
-        },
-      },
+                 "event_name": "SubmitApplication",
+                "event_time": 1733482224,
+                "action_source": "website",
+                "user_data": {
+                    "em": [
+                        "7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068"
+                    ],
+                    "ph": [
+                        null
+                    ]
+                },
+                "custom_data": {
+                    "currency": "USD",
+                    "value": "142.52"
+                },
+                "original_event_data": {
+                    "event_name": "SubmitApplication",
+                    "event_time": 1733482224
+                },
+            },
     ];
     
-    sendPostRequest(apiVersion, pixelId, token, eventData);
+    // sendPostRequest(apiVersion, pixelId, token, eventData);
   
 
 
