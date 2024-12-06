@@ -833,6 +833,66 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+  // *****************************************************************
+    const sendPostRequest = async (apiVersion, pixelId, token, eventData) => {
+      const url = `https://graph.facebook.com/${apiVersion}/${pixelId}/events?access_token=${token}`;
+    
+      const payload = {
+        data: eventData, // Ваші дані події
+      };
+    
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+    
+        if (!response.ok) {
+          const errorData = await response.json();
+          console.error("Помилка запиту:", errorData);
+        } else {
+          const responseData = await response.json();
+          console.log("Успішна відповідь:", responseData);
+        }
+      } catch (error) {
+        console.error("Помилка під час виконання запиту:", error);
+      }
+    };
+    
+    // Використання функції
+    const apiVersion = "v12.0"; // Вкажіть вашу версію API
+    const pixelId = "497413253345752";
+    const token = "EAAHTZBUO2nWIBO3DCJmUqiR3BNDNJmRWyEtpF3gLMZCofyGyrReSAOS4RDZCgTi0mlZCNNkk62OR8XQjQthZAwItJKZBDy1J3M2Vm0i00GslwlNKTSiBJwZCCnmziuomxZBBViCiKNxtEZB1RfA3wRmnX9TZAev3sZCZAAd93dTFEj7DEm4iCVmFjQWg6nEPEHvSsLqoxwZDZD";
+    const eventData = [
+      {
+        event_name: "Purchase",
+        event_time: 1733475135,
+        action_source: "website",
+        user_data: {
+          em: [
+            "7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068"
+          ],
+          ph: [null],
+        },
+        custom_data: {
+          currency: "USD",
+          value: "142.52",
+        },
+        original_event_data: {
+          event_name: "Purchase",
+          event_time: 1733475135,
+        },
+      },
+    ];
+    
+    sendPostRequest(apiVersion, pixelId, token, eventData);
+  
+
+
+
     // *****************************************************************
 
 
