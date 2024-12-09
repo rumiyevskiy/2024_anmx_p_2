@@ -1,7 +1,7 @@
 // це слухач (гладач, наглядач, відстежувач) подій,  який підтверджує завантаження всього контенту DOM, а після запускає функцію,  в якій ми прописуємо всі наші завдання для javascript
 document.addEventListener("DOMContentLoaded", function () {
 
-  // це реалізація виявлення на якому пристрої відкрит наш додаток або сторінка. працює так: оголошуємо об'єкт з ім'ям isMobile, в якому ключи - це функції,  які перевіряють в значенні navigator
+  // це реалізація виявлення на якому пристрої відкрит наш додаток або сторінка. працює так: оголошуємо об'єкт з ім'ям isMobile, в якому ключи - це функції,  які перевіряють в значенні navigator.userAgent — рядок, який браузер надає, щоб описати себе. Наприклад: якщо в рядку userAgent є текст Android, метод поверне true. В кінці об'єкту я метод any: викликає всі інші методи (Android, BlackBerry, iOS, тощо) і повертає true, якщо хоча б один із них повертає true. Таким чином, визначається, чи це мобільний пристрій загалом.
   const isMobile = {
     Android: function () {
       return navigator.userAgent.match(/Android/i);  
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     }
   };
-
+// далі ми перевіряємо, чи повернув метод any значення true, якщо так, то додаємо до елемента body клас '__touch', інакше клас '__pc', далі можно або тут після додавання класу писати код  в залежності від того, для якого пристрою ми будемо це робити. але таким способом можно отримати помилкуи. то ліпше потім просто перевіряти який клас додан но елементу body і далі вже вирішувати завдання.
   if (isMobile.any()) {
       document.body.classList.add('__touch');
 
@@ -325,7 +325,9 @@ document.addEventListener("DOMContentLoaded", function () {
       grabCursor: true,
       centeredSlides: true,
       initialSlide: 2,
-      speed: 600,
+      // speed: 600,
+      spaceBetween: 50,
+      
       preventClicks: true,
       slidesPerView: "auto",
       coverflowEffect: {
@@ -334,6 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
         rotate: 0,
         stretch: 0,
         slideShadows: true,
+
       },
 
       //**************************************************
