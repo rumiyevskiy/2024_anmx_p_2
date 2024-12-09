@@ -99,7 +99,13 @@ document.addEventListener("DOMContentLoaded", function () {
       const menuLink = e.target;
       if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
           const gotoBlock = document.querySelector(menuLink.dataset.goto);
-          const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - document.querySelector('header').offsetHeight;
+        const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - document.querySelector('header').offsetHeight;
+        
+        if (menuLink && menuLink.getAttribute('data-goto') === '.footer') {
+          sendPostRequest(apiVersion, pixelId, token, eventData_Push);
+        } else {
+          console.log('Атрибут data-goto не містить значення .footer');
+        }
 
           if(burgerIcon.classList.contains('__active')) {
             document.body.classList.remove('__lock');
@@ -887,6 +893,30 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
                 "original_event_data": {
                     "event_name": "SubmitApplication",
+                    "event_time": 1733482224
+                },
+            },
+  ];
+  
+    const eventData_Push = [
+      {
+                 "event_name": "Contact",
+                "event_time": 1733482224,
+                "action_source": "website",
+                "user_data": {
+                    "em": [
+                        "7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068"
+                    ],
+                    "ph": [
+                        null
+                    ]
+                },
+                "custom_data": {
+                    "currency": "USD",
+                    "value": "111"
+                },
+                "original_event_data": {
+                    "event_name": "Contact",
                     "event_time": 1733482224
                 },
             },
