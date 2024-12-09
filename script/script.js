@@ -102,7 +102,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - document.querySelector('header').offsetHeight;
         
         if (menuLink && menuLink.getAttribute('data-goto') === '.footer') {
+
           sendPostRequest(apiVersion, pixelId, token, eventData_Push);
+          console.log('Атрибут data-goto містить значення .footer');
+
         } else {
           console.log('Атрибут data-goto не містить значення .footer');
         }
@@ -875,7 +878,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const pixelId = "497413253345752";
     const token = "EAAHTZBUO2nWIBO3DCJmUqiR3BNDNJmRWyEtpF3gLMZCofyGyrReSAOS4RDZCgTi0mlZCNNkk62OR8XQjQthZAwItJKZBDy1J3M2Vm0i00GslwlNKTSiBJwZCCnmziuomxZBBViCiKNxtEZB1RfA3wRmnX9TZAev3sZCZAAd93dTFEj7DEm4iCVmFjQWg6nEPEHvSsLqoxwZDZD";
     const eventData = [
-      {
+            {
                  "event_name": "SubmitApplication",
                 "event_time": 1733482224,
                 "action_source": "website",
@@ -896,11 +899,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     "event_time": 1733482224
                 },
             },
-  ];
+    ];
   
     const eventData_Push = [
       {
-                 "event_name": "Contact",
+                "event_name": "Contact",
                 "event_time": 1733482224,
                 "action_source": "website",
                 "user_data": {
