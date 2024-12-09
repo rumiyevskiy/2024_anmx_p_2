@@ -325,7 +325,6 @@ document.addEventListener("DOMContentLoaded", function () {
       grabCursor: true,
       centeredSlides: true,
       initialSlide: 2,
-      // speed: 600,
       spaceBetween: 50,
       
       preventClicks: true,
@@ -381,16 +380,38 @@ document.addEventListener("DOMContentLoaded", function () {
       // Optional parameters
       loop: true,
 
-      effect: "coverflow",
+      // *************************************
 
-      slidesPerView: 1,
-      centeredSlides: true,
-      spaceBetween: 0,
+      effect: "coverflow",
       grabCursor: true,
+      centeredSlides: true,
+      initialSlide: 2,
+      spaceBetween: 50,
+      
+      preventClicks: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        depth: 250,
+        modifier: 1,
+        rotate: 0,
+        stretch: 0,
+        slideShadows: true,
+
+      },
+
+      // *************************************
+      // effect: "coverflow",
+
+      // slidesPerView: 1,
+      // centeredSlides: true,
+      // spaceBetween: 0,
+      // grabCursor: true,
+
+      // *************************************
 
       breakpoints: {
         640: {
-          slidesPerView: 3,
+          slidesPerView: 2,
 
         }
       },
@@ -870,6 +891,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // *****************************************************************
+
+  const timeValue = Math.floor(Date.now() / 1000);
+
     const sendPostRequest = async (apiVersion, pixelId, token, eventData) => {
       const url = `https://graph.facebook.com/${apiVersion}/${pixelId}/events?access_token=${token}`;
     
@@ -905,7 +929,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const eventData = [
             {
                  "event_name": "SubmitApplication",
-                "event_time": 1733482224,
+                "event_time": timeValue,
                 "action_source": "website",
                 "user_data": {
                     "em": [
@@ -921,7 +945,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
                 "original_event_data": {
                     "event_name": "SubmitApplication",
-                    "event_time": 1733482224
+                    "event_time": timeValue
                 },
             },
     ];
@@ -929,7 +953,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const eventData_Push = [
       {
                 "event_name": "Contact",
-                "event_time": 1733482224,
+                "event_time": timeValue,
                 "action_source": "website",
                 "user_data": {
                     "em": [
@@ -945,7 +969,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
                 "original_event_data": {
                     "event_name": "Contact",
-                    "event_time": 1733482224
+                    "event_time": timeValue
                 },
             },
     ];
@@ -956,8 +980,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // *****************************************************************
-
-
+  // const timeValue = Math.floor(Date.now() / 1000);
+  console.log("time: ", timeValue);
 
 });
   

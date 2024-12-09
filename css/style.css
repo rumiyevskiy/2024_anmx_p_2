@@ -532,7 +532,7 @@ body.__lock {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
 }
 .page__about .page__about-textbody .page__hero-title {
   color: #ff0000;
