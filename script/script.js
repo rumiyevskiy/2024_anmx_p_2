@@ -1,6 +1,7 @@
-
+// це слухач (гладач, наглядач, відстежувач) подій,  який підтверджує завантаження всього контенту DOM, а після запускає функцію,  в якій ми прописуємо всі наші завдання для javascript
 document.addEventListener("DOMContentLoaded", function () {
 
+  // це реалізація виявлення на якому пристрої відкрит наш додаток або сторінка. працює так: оголошуємо об'єкт з ім'ям isMobile, в якому ключи - це функції,  які перевіряють в значенні navigator
   const isMobile = {
     Android: function () {
       return navigator.userAgent.match(/Android/i);  
@@ -319,20 +320,39 @@ document.addEventListener("DOMContentLoaded", function () {
       // Optional parameters
       loop: true,
 
+      //**************************************************
       effect: "coverflow",
-
-      slidesPerView: "auto",
-      centeredSlides: true,
-      spaceBetween: 0,
       grabCursor: true,
-
+      centeredSlides: true,
+      initialSlide: 2,
+      speed: 600,
+      preventClicks: true,
+      slidesPerView: "auto",
       coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
+        rotate: 0,
+        stretch: 80,
+        depth: 350,
         modifier: 1,
         slideShadows: true,
       },
+      
+      //**************************************************
+      // effect: "coverflow",
+
+      // slidesPerView: "auto",
+      // centeredSlides: true,
+      // spaceBetween: 0,
+      // grabCursor: true,
+
+      // coverflowEffect: {
+      //   rotate: 50,
+      //   stretch: 0,
+      //   depth: 100,
+      //   modifier: 1,
+      //   slideShadows: true,
+      // },
+
+    //**************************************************
 
       breakpoints: {
         640: {
@@ -340,6 +360,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
       },
+
+
       
         // Navigation arrows
       navigation: {
