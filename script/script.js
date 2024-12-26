@@ -334,27 +334,11 @@ document.addEventListener("DOMContentLoaded", function () {
         modifier: 1,
         rotate: 0,
         stretch: 0,
-        slideShadows: true,
+        slideShadows: false,
 
       },
 
-      //**************************************************
-      // effect: "coverflow",
 
-      // slidesPerView: "auto",
-      // centeredSlides: true,
-      // spaceBetween: 0,
-      // grabCursor: true,
-
-      // coverflowEffect: {
-      //   rotate: 50,
-      //   stretch: 0,
-      //   depth: 100,
-      //   modifier: 1,
-      //   slideShadows: true,
-      // },
-
-    //**************************************************
 
       breakpoints: {
         640: {
@@ -386,28 +370,20 @@ document.addEventListener("DOMContentLoaded", function () {
       grabCursor: true,
       centeredSlides: true,
       initialSlide: 2,
-      spaceBetween: 50,
+      spaceBetween: 40,
       
       preventClicks: true,
       slidesPerView: "auto",
       coverflowEffect: {
-        depth: 250,
+        depth: 350,
         modifier: 1,
         rotate: 0,
         stretch: 0,
-        slideShadows: true,
+        slideShadows: false,
 
       },
 
-      // *************************************
-      // effect: "coverflow",
 
-      // slidesPerView: 1,
-      // centeredSlides: true,
-      // spaceBetween: 0,
-      // grabCursor: true,
-
-      // *************************************
 
       breakpoints: {
         640: {
