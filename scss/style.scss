@@ -1728,9 +1728,6 @@ body {
         }
 }
 
-
-
-
 .page__section-5 {
 
     .section__body {
@@ -1798,7 +1795,7 @@ body {
             &.__1 {
                 flex: 0 0 100%;
                 // border-bottom: 1px solid #808080;
-                background-color: #f0f0f0;
+                // background-color: #f0f0f0;
             }
 
             &.__2 {
@@ -1809,6 +1806,7 @@ body {
                 gap: 10px;
                 padding: 0 20px 20px 20px;
                 align-items: center;
+                // background-color: #f0f0f0;
 
                 // border-bottom: 1px solid #808080;
 
@@ -1887,7 +1885,7 @@ body {
 
                 padding: 0 5%;
 
-                background-color: #f0f0f0;
+                // background-color: #f0f0f0;
 
                 .imgs-block {
 
@@ -2209,6 +2207,18 @@ body {
 
         }
     }
+}
+
+.reviews {
+
+    &.page__about {
+        background-color: transparent;
+    }
+    
+    .slider-main-block__arrows {
+        bottom: 20px;
+    }
+    
 }
 
 

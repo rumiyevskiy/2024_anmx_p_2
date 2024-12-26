@@ -1142,7 +1142,6 @@ body.__lock {
 }
 .page__section-5 .section__body .section-5__body-item.__1 {
   flex: 0 0 100%;
-  background-color: #f0f0f0;
 }
 .page__section-5 .section__body .section-5__body-item.__2 {
   flex: 0 0 50%;
@@ -1213,7 +1212,6 @@ body.__lock {
   display: flex;
   flex-direction: column;
   padding: 0 5%;
-  background-color: #f0f0f0;
 }
 .page__section-5 .section__body .section-5__body-item.__3 .imgs-block .imgs-block__item {
   margin: 10px 0;
@@ -1451,6 +1449,13 @@ body.__lock {
   .page__section-video .section-video__body {
     grid-template-columns: 1fr;
   }
+}
+
+.reviews.page__about {
+  background-color: transparent;
+}
+.reviews .slider-main-block__arrows {
+  bottom: 20px;
 }
 
 .footer .footer__body {
