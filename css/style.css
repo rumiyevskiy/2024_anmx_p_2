@@ -1187,6 +1187,7 @@ body.__lock {
   margin: 0 auto;
   max-width: 100%;
   max-height: 100%;
+  width: 170px;
 }
 .page__section-5 .section__body .section-5__body-item .section__body-text {
   font-size: calc(20px + 6 * (100vw - 320px) / 1120);
