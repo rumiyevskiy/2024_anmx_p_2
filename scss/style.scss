@@ -78,6 +78,48 @@ body {
         justify-content: space-between;
         min-height: 70px;    
     }
+
+    .header__contacts {
+        text-align: center;
+        
+
+        .accent-color {
+            color: rgb(178, 164, 89);
+        }
+
+        .contacts__title {
+            @include adaptiv-font(22, 20)
+        }
+
+        .socials {
+            display: flex;
+            // width: 50%;
+            justify-content: center;
+            // justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+
+        .header-socials__ico {
+            width: 30px;
+            margin: 0 10px;
+    
+            img {
+                max-height: 100%;
+                
+            }        
+        }
+
+        // div {
+        //     margin: 10px 0;
+
+        //     &.contacts__phone,
+        //     &.contacts__mail {
+        //         @include adaptiv-font(20, 18)
+        //     }
+        // }
+
+    }
 }
 
 .header__menu__icon {
@@ -341,7 +383,7 @@ body {
 .main {
     background-color: var(--mainBgClr);
     flex: 1 1 auto;
-    padding: 70px 10px 10px 10px;
+    padding: 100px 10px 10px 10px;
 }
 
 .action__btn {
@@ -655,7 +697,7 @@ body {
 
         .slider-box {
             position: relative;
-            margin: 20px 20px 30px 20px;
+            margin: 20px 0 30px 0;
             
             border-radius: 10px;
         }
@@ -1224,7 +1266,7 @@ body {
 
         .slider-box {
             position: relative;
-            margin: 20px 20px 30px 20px;
+            margin: 0 20px 20px 20px;
             // border: 1px solid rgb(223, 136, 136);
             border-radius: 10px;
         }
@@ -2347,16 +2389,20 @@ body {
 
             .socials {
                 display: flex;
-                width: 50%;
-                justify-content: space-between;
+                // width: 50%;
+                justify-content: center;
+                // justify-content: space-between;
+                flex-wrap: wrap;
                 margin: 0 auto;
             }
 
             .footer-socials__ico {
                 width: 30px;
+                margin: 10px;
         
                 img {
                     max-height: 100%;
+                    
                 }        
             }
 
