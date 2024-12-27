@@ -85,6 +85,19 @@ body.__lock {
 .header .header__contacts .header-socials__ico img {
   max-height: 100%;
 }
+.header .header__contacts.mob {
+  display: none;
+}
+@media (max-width: 768px) {
+  .header .header__contacts.mob {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .header .header__contacts.pc {
+    display: none;
+  }
+}
 
 .header__menu__icon.burger {
   display: none;

@@ -110,14 +110,19 @@ body {
             }        
         }
 
-        // div {
-        //     margin: 10px 0;
+        &.mob {
+            display: none;
 
-        //     &.contacts__phone,
-        //     &.contacts__mail {
-        //         @include adaptiv-font(20, 18)
-        //     }
-        // }
+            @media(max-width: 768px) {
+                display: block;
+            }
+        }
+
+        &.pc {
+            @media(max-width: 768px) {
+                display: none;
+            }
+        }
 
     }
 }
@@ -1826,6 +1831,7 @@ body {
     
                 height: 300px;
                 margin: 0 auto;
+
     
                 img {
                     display: block;
