@@ -1862,6 +1862,40 @@ body {
                 flex: 0 0 100%;
                 // border-bottom: 1px solid #808080;
                 // background-color: #f0f0f0;
+
+                .header__contacts {
+                    text-align: center;
+                    
+            
+                    .accent-color {
+                        color: rgb(178, 164, 89);
+                    }
+            
+                    .contacts__title {
+                        @include adaptiv-font(22, 20)
+                    }
+            
+                    .socials {
+                        display: flex;
+                        // width: 50%;
+                        justify-content: center;
+                        // justify-content: space-between;
+                        flex-wrap: wrap;
+                        margin: 0 auto;
+                    }
+            
+                    .header-socials__ico {
+                        width: 30px;
+                        margin: 0 10px;
+                
+                        img {
+                            max-height: 100%;
+                            
+                        }        
+                    }           
+                    
+            
+                }
             }
 
             &.__2 {
@@ -1945,13 +1979,13 @@ body {
             }
 
             &.__3 {
-                // flex: 0 0 50%;
+                
                 display: flex;
                 flex-direction: column;
 
                 padding: 0 5%;
 
-                // background-color: #f0f0f0;
+                
 
                 .imgs-block {
 
@@ -1978,7 +2012,7 @@ body {
 
                         .block__item-infobox {
 
-                            // padding: 0 10%;
+                            
 
                             display: flex;
                             justify-content: center;
@@ -1997,9 +2031,7 @@ body {
     
                                 img {
                                     max-width: 100%;
-                                    // max-height: 100%;
-                                    // object-fit: cover;
-                                    // object-position: -25% 0;
+                                    
                                     
                                     position: absolute;
                                     top: -20%;

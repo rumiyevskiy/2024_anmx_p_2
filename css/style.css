@@ -1197,6 +1197,28 @@ body.__lock {
 .page__section-5 .section__body .section-5__body-item.__1 {
   flex: 0 0 100%;
 }
+.page__section-5 .section__body .section-5__body-item.__1 .header__contacts {
+  text-align: center;
+}
+.page__section-5 .section__body .section-5__body-item.__1 .header__contacts .accent-color {
+  color: rgb(178, 164, 89);
+}
+.page__section-5 .section__body .section-5__body-item.__1 .header__contacts .contacts__title {
+  font-size: calc(20px + 2 * (100vw - 320px) / 1120);
+}
+.page__section-5 .section__body .section-5__body-item.__1 .header__contacts .socials {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.page__section-5 .section__body .section-5__body-item.__1 .header__contacts .header-socials__ico {
+  width: 30px;
+  margin: 0 10px;
+}
+.page__section-5 .section__body .section-5__body-item.__1 .header__contacts .header-socials__ico img {
+  max-height: 100%;
+}
 .page__section-5 .section__body .section-5__body-item.__2 {
   flex: 0 0 50%;
   display: flex;
