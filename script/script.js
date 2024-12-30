@@ -398,9 +398,9 @@ document.addEventListener("DOMContentLoaded", function () {
         prevEl: '.slider-main-block2__arrow.swiper-button-prev',
       },
       
-      autoplay: {
-        delay: 2000,
-      },
+      // autoplay: {
+      //   delay: 2000,
+      // },
     });
   
     const swiper3 = new Swiper('.slider-main-block3', {
@@ -429,9 +429,9 @@ document.addEventListener("DOMContentLoaded", function () {
         prevEl: '.slider-main-block3__arrow.swiper-button-prev',
       },
       
-      autoplay: {
-        delay: 6000,
-      },
+      // autoplay: {
+      //   delay: 6000,
+      // },
     });
   
     const swiper4 = new Swiper('.slider-main-block4', {
