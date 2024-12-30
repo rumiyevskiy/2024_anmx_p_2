@@ -328,7 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
       spaceBetween: 50,
       
       preventClicks: true,
-      slidesPerView: "auto",
+      slidesPerView: 1,
       coverflowEffect: {
         depth: 250,
         modifier: 1,
@@ -343,7 +343,6 @@ document.addEventListener("DOMContentLoaded", function () {
       breakpoints: {
         640: {
           slidesPerView: 2,
-
         }
       },
 
@@ -359,6 +358,7 @@ document.addEventListener("DOMContentLoaded", function () {
         delay: 3000,
       },
     });
+  
   
     const swiper2 = new Swiper('.slider-main-block2', {
       // Optional parameters
@@ -398,9 +398,9 @@ document.addEventListener("DOMContentLoaded", function () {
         prevEl: '.slider-main-block2__arrow.swiper-button-prev',
       },
       
-      // autoplay: {
-      //   delay: 2000,
-      // },
+      autoplay: {
+        delay: 1000,
+      },
     });
   
     const swiper3 = new Swiper('.slider-main-block3', {
@@ -429,9 +429,9 @@ document.addEventListener("DOMContentLoaded", function () {
         prevEl: '.slider-main-block3__arrow.swiper-button-prev',
       },
       
-      // autoplay: {
-      //   delay: 6000,
-      // },
+      autoplay: {
+        delay: 4000,
+      },
     });
   
     const swiper4 = new Swiper('.slider-main-block4', {
@@ -460,9 +460,9 @@ document.addEventListener("DOMContentLoaded", function () {
         prevEl: '.slider-main-block4__arrow.swiper-button-prev',
       },
       
-      // autoplay: {
-      //   delay: 6000,
-      // },
+      autoplay: {
+        delay: 4000,
+      },
     });
 
   
