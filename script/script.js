@@ -105,10 +105,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (menuLink && menuLink.getAttribute('data-goto') === '.footer') {
 
           sendPostRequest(apiVersion, pixelId, token, eventData_Push);
-          console.log('Атрибут data-goto містить значення .footer');
+          // console.log('Атрибут data-goto містить значення .footer');
 
         } else {
-          console.log('Атрибут data-goto не містить значення .footer');
+          // console.log('Атрибут data-goto не містить значення .footer');
         }
 
           if(burgerIcon.classList.contains('__active')) {
