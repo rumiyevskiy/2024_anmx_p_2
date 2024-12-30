@@ -432,7 +432,38 @@ document.addEventListener("DOMContentLoaded", function () {
       autoplay: {
         delay: 6000,
       },
-  });
+    });
+  
+    const swiper4 = new Swiper('.slider-main-block4', {
+      // Optional parameters
+      loop: true,
+
+      effect: "coverflow",
+
+      slidesPerView: 1,
+      centeredSlides: true,
+      spaceBetween: 0,
+      grabCursor: true,
+
+      breakpoints: {
+        640: {
+          slidesPerView: 3,
+
+        }
+      },
+
+
+      
+        // Navigation arrows
+      navigation: {
+        nextEl: '.slider-main-block4__arrow.swiper-button-next',
+        prevEl: '.slider-main-block4__arrow.swiper-button-prev',
+      },
+      
+      // autoplay: {
+      //   delay: 6000,
+      // },
+    });
 
   
 
