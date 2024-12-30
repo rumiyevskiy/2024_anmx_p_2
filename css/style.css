@@ -1524,6 +1524,13 @@ body.__lock {
   }
 }
 
+.reviews.page__about {
+  background-color: transparent;
+}
+.reviews .slider-main-block__arrows {
+  bottom: 20px;
+}
+
 .footer .footer__body {
   display: flex;
   justify-content: space-around;
