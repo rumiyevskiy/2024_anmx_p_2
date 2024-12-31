@@ -375,7 +375,7 @@ document.addEventListener("DOMContentLoaded", function () {
       preventClicks: true,
       slidesPerView: "auto",
       coverflowEffect: {
-        depth: 350,
+        depth: 150,
         modifier: 1,
         rotate: 0,
         stretch: 0,
@@ -407,11 +407,11 @@ document.addEventListener("DOMContentLoaded", function () {
       // Optional parameters
       loop: true,
 
-      effect: "coverflow",
+      // effect: "coverflow",
 
       slidesPerView: 1,
       centeredSlides: true,
-      spaceBetween: 0,
+      spaceBetween: 10,
       grabCursor: true,
 
       breakpoints: {
@@ -438,12 +438,12 @@ document.addEventListener("DOMContentLoaded", function () {
       // Optional parameters
       loop: true,
 
-      effect: "coverflow",
+      // effect: "coverflow",
 
       slidesPerView: 1,
-      centeredSlides: true,
-      spaceBetween: 0,
-      grabCursor: true,
+      // centeredSlides: true,
+      spaceBetween: 10,
+      // grabCursor: true,
 
       breakpoints: {
         640: {
