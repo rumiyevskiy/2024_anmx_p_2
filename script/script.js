@@ -676,7 +676,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const chatId = '-551933957'; // ID чату
 
         const bodymessage = `
-            Запит з сайту Annamax (Набір солодощів)
+            Запит з сайту Annamax (Набір солодощів) https://ua.annamax.com.ua
             Ім'я: ${name}
             Телефон: ${phone}
             Пошта: ${email}
@@ -735,7 +735,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Параметри для Email.js, тут ми формуємо об'єкт, який надішлемо до пошти, вказаної при реєстрації на сервісі emailjs. тут головне: щоб назви ключей відповідали змінним у подвійних дужках {{}} в темплейті(шаблоні) в сервісі emailjs
     const templateParams = {
-      from_name: 'site Annamax (Набір солодощів)',
+      from_name: 'site Annamax (Набір солодощів) https://ua.annamax.com.ua',
       message: `Ім'я: ${name || ""} 
                 Телефон: ${phone || ""}
                 Е-mail: ${email || ""}
