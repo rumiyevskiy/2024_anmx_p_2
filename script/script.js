@@ -1,6 +1,43 @@
 // це слухач (гладач, наглядач, відстежувач) подій,  який підтверджує завантаження всього контенту DOM, а після запускає функцію,  в якій ми прописуємо всі наші завдання для javascript
 document.addEventListener("DOMContentLoaded", function () {
 
+  // UTM-мітки
+  function getUTMParameters() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+        utm_source: params.get('utm_source') || "не вказано",
+        utm_medium: params.get('utm_medium') || "не вказано",
+        utm_campaign: params.get('utm_campaign') || "не вказано",
+        utm_content: params.get('utm_content') || "не вказано",
+        utm_term: params.get('utm_term') || "не вказано",
+    };
+  }
+
+  // Зберігаємо UTM-мітки в localStorage
+  function saveUTMToLocalStorage() {
+    const utmParams = getUTMParameters();
+    localStorage.setItem('utmParams', JSON.stringify(utmParams));
+  }
+
+  // Отримуємо UTM-мітки з localStorage
+  function getUTMFromLocalStorage() {
+    const utmData = localStorage.getItem('utmParams');
+    return utmData ? JSON.parse(utmData) : {
+        utm_source: "не вказано",
+        utm_medium: "не вказано",
+        utm_campaign: "не вказано",
+        utm_content: "не вказано",
+        utm_term: "не вказано",
+    };
+  }
+
+  // Викликаємо функцію для збереження UTM-міток
+  saveUTMToLocalStorage();
+
+  // Отримуємо збережені UTM-мітки
+  const utmParams = getUTMFromLocalStorage();
+ 
+
   // це реалізація виявлення на якому пристрої відкрит наш додаток або сторінка. працює так: оголошуємо об'єкт з ім'ям isMobile, в якому ключи - це функції,  які перевіряють в значенні navigator.userAgent — рядок, який браузер надає, щоб описати себе. Наприклад: якщо в рядку userAgent є текст Android, метод поверне true. В кінці об'єкту я метод any: викликає всі інші методи (Android, BlackBerry, iOS, тощо) і повертає true, якщо хоча б один із них повертає true. Таким чином, визначається, чи це мобільний пристрій загалом.
   const isMobile = {
     Android: function () {
@@ -670,10 +707,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Функція для відправки повідомлення в Telegram
   async function sendTelegram(name, phone, email, request, select_type, select_size, select_decor, privacy) {
 
-    // const botToken = '7648355172:AAE4jsw4ZfadhgoEezXJyy0X7U4EQwFkkbQ'; // Токен МІЙ бота
-    // const chatId = '-4588952109'; // ID МІЙ чату
-    const botToken = '1605870485:AAHL-Z9gtDNJxzN3hggY_cd3yUeUfQ072yE'; // Токен бота
-    const chatId = '-551933957'; // ID чату
+    const botToken = '7648355172:AAE4jsw4ZfadhgoEezXJyy0X7U4EQwFkkbQ'; // Токен МІЙ бота
+    const chatId = '-4588952109'; // ID МІЙ чату
+
 
         const bodymessage = `
             Запит з сайту Annamax (Набір солодощів) https://ua.annamax.com.ua
@@ -684,7 +720,13 @@ document.addEventListener("DOMContentLoaded", function () {
             Наповнювачи: ${select_type||""}
             Варіант цифр: ${select_size||""}
             Святкове оформлення: ${select_decor||""}
-            Згода на обробку даних: ${privacy||"так"}
+            Згода на обробку даних: ${privacy || "так"}
+            
+            utm_source: ${utmParams.utm_source}
+            utm_medium: ${utmParams.utm_medium}
+            utm_campaign: ${utmParams.utm_campaign}
+            utm_content: ${utmParams.utm_content}
+            utm_term: ${utmParams.utm_term}
         `;
 
         // Відправка через API Telegram
@@ -727,8 +769,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // сайт: https://dashboard.emailjs.com/admin/account
     // це Public Key з розділу account/general:API keys
-    // let emailjsID = "_ruQbUC348SMI_KYA"; // МІЙ-ID
-    let emailjsID = "mq5LVCRL1uA0epLXa";
+    let emailjsID = "_ruQbUC348SMI_KYA"; // МІЙ-ID
+
 
     // ініціалізація сервісу за допомогою Public Key (або ще його називають user_id)
     emailjs.init(emailjsID);
@@ -742,17 +784,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 Літери: ${request || ""}
                 Наповнювачи: ${select_type || ""} 
                 Варіант цифр: ${select_size || ""} 
-                Святкове оформлення: ${select_decor || ""}`,
+                Святкове оформлення: ${select_decor || ""}
+
+                utm_source: ${utmParams.utm_source}
+                utm_medium: ${utmParams.utm_medium}
+                utm_campaign: ${utmParams.utm_campaign}
+                utm_content: ${utmParams.utm_content}
+                utm_term: ${utmParams.utm_term}`,
     };
     
 
     // сюда SERVICE_ID записується Service ID з вкладки Edit Service який ми отримали при додаванні сервіса, яким будемо користуватися при надсиланнях повідомлень в emailjs. я використовував gmail
-    // let SERVICE_ID = 'service_oeydswb'; // МІЙ-ID
-    let SERVICE_ID = 'service_pq3pnlx';
+    let SERVICE_ID = 'service_oeydswb'; // МІЙ-ID
 
     // сюда TEMPLATE_ID записується Template ID з вкладки Email Templates, далі обираємо потрібний створений нами template (в безкоштовному варіанті їх тільки два), далі обираємо settings, там знаходимо Template ID
-    // let TEMPLATE_ID = 'template_53b9ea6'; // МІЙ-ID
-    let TEMPLATE_ID = 'template_4zhd3xj';
+    let TEMPLATE_ID = 'template_53b9ea6'; // МІЙ-ID
 
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
         .then((response) => {
@@ -898,97 +944,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // *****************************************************************
-
-  const timeValue = Math.floor(Date.now() / 1000);
-
-    const sendPostRequest = async (apiVersion, pixelId, token, eventData) => {
-      const url = `https://graph.facebook.com/${apiVersion}/${pixelId}/events?access_token=${token}`;
-    
-      const payload = {
-        data: eventData, // Ваші дані події
-      };
-    
-      try {
-        const response = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        });
-    
-        if (!response.ok) {
-          const errorData = await response.json();
-          console.error("Помилка запиту:", errorData);
-        } else {
-          const responseData = await response.json();
-          console.log("Успішна відповідь:", responseData);
-        }
-      } catch (error) {
-        console.error("Помилка під час виконання запиту:", error);
-      }
-    };
-    
-    // Використання функції
-    const apiVersion = "v12.0"; // Вкажіть вашу версію API
-    const pixelId = "497413253345752";
-    const token = "EAAHTZBUO2nWIBO3DCJmUqiR3BNDNJmRWyEtpF3gLMZCofyGyrReSAOS4RDZCgTi0mlZCNNkk62OR8XQjQthZAwItJKZBDy1J3M2Vm0i00GslwlNKTSiBJwZCCnmziuomxZBBViCiKNxtEZB1RfA3wRmnX9TZAev3sZCZAAd93dTFEj7DEm4iCVmFjQWg6nEPEHvSsLqoxwZDZD";
-    const eventData = [
-            {
-                 "event_name": "SubmitApplication",
-                "event_time": timeValue,
-                "action_source": "website",
-                "user_data": {
-                    "em": [
-                        "7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068"
-                    ],
-                    "ph": [
-                        null
-                    ]
-                },
-                "custom_data": {
-                    "currency": "USD",
-                    "value": "142.52"
-                },
-                "original_event_data": {
-                    "event_name": "SubmitApplication",
-                    "event_time": timeValue
-                },
-            },
-    ];
-  
-    const eventData_Push = [
-      {
-                "event_name": "Contact",
-                "event_time": timeValue,
-                "action_source": "website",
-                "user_data": {
-                    "em": [
-                        "7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068"
-                    ],
-                    "ph": [
-                        null
-                    ]
-                },
-                "custom_data": {
-                    "currency": "USD",
-                    "value": "111"
-                },
-                "original_event_data": {
-                    "event_name": "Contact",
-                    "event_time": timeValue
-                },
-            },
-    ];
-    
-    // sendPostRequest(apiVersion, pixelId, token, eventData);
-  
-
-
-
-    // *****************************************************************
-  // const timeValue = Math.floor(Date.now() / 1000);
-  console.log("time: ", timeValue);
 
 });
   
